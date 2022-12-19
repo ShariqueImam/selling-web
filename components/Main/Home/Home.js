@@ -12,7 +12,7 @@ const Home = () => {
         Set up a forwarding order <span className="font-normal mx-2">now</span>
       </h2>
       {/* adding the image */}
-      <div className="flex  md:top-[12rem] lg:top-[11rem] items-center">
+      <div className="flex  md:top-[12rem] lg:top-[11rem] items-center flex-col  md:flex-row">
         <Image src="/assets/postbox.png" width={400} height={200} />
         <HomeCard />
       </div>
