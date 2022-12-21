@@ -2,17 +2,17 @@ import React from "react";
 import SinglePlan from "./SinglePlan";
 const Plans = () => {
   return (
-    <div className="flex w-[100%] md:w-[60%] mx-auto my-9 md:my-12 items-center justify-center flex-col ">
+    <div className="flex w-[100%] md:w-[70%] mx-auto my-9 md:my-12 items-center justify-center flex-col px-4 md:px-0  ">
       <div className="flex w-[100%] flex-col md:flex-row items-center justify-center">
         <SinglePlan
-          heading={"Private"}
+          heading={"Privat"}
           p1={"89.90"}
           p2={"99.90"}
           p11={"15"}
           p12={"9"}
         />
         <SinglePlan
-          heading={"Business"}
+          heading={"Geschäftlich"}
           p1={"99.90"}
           p2={"119.90"}
           p11={"17"}

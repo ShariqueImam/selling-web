@@ -5,6 +5,7 @@ import Gray from "./Gray/Gray";
 import Plans from "./Plans/Plans";
 import Reviews from "./Reviews/Reviews";
 import Cta from "./Cta/Cta";
+import FaqCollection from './QA/FaqCollection'
 const style = {
   wrapper: "a",
 };
@@ -15,7 +16,8 @@ const Main = () => {
       <Home />
       <Gray />
       <Plans />
-      {/* <Reviews /> */}
+      <Reviews />
+      <FaqCollection />
       <Cta />
     </div>
   );

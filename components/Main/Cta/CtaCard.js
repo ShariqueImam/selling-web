@@ -13,16 +13,16 @@ const CtaCard = () => {
         <div className="flex items-center justify-start py-2 md:py-0 px-6 md:px-8 ">
           <TiTick className="text-green-500 text-2xl md:text-5xl mx-2 hidden sm:flex" />
           <p className="text-secondary">
-            Set up a forwarding order easily and conveniently
+          Nachsendeauftrag einfach und bequem einrichten
           </p>
         </div>
         <div className="flex items-center justify-start py-2 md:py-0 px-6 md:px-8">
           <TiTick className="text-green-500 text-2xl md:text-5xl mx-2 hidden sm:flex" />
-          <p className="text-secondary">Fast & reliable processing</p>
+          <p className="text-secondary">Schnelle & zuverlässige Bearbeitung</p>
         </div>
         <div className="flex items-center justify-start py-2 md:py-0 px-6 md:px-8">
           <TiTick className="text-green-500 text-2xl md:text-5xl mx-2 hidden sm:flex" />
-          <p className="text-secondary">Private data in good hands </p>
+          <p className="text-secondary">Private Daten in guten Händen </p>
         </div>
         {/* adding the image */}
         <div className="flex items-center justify-center my-3">
@@ -37,8 +37,8 @@ const CtaCard = () => {
           <Image src="/assets/1.png" width={80} height={80} />
         </div>
         <button className="green flex  items-center justify-center hover:scale-[1.12] transtion duration-[100ms] mt-7 md:mt-9 py-3">
-          <p className="text-white text-3xl md:text-4xl font-semibold tracking-wider">
-            APPLY FOR
+          <p className="text-white text-3xl md:text-4xl font-semibold tracking-widest">
+            BEANTRAGEN
           </p>
           <IoMdArrowDropright className="text-5xl text-white" />
         </button>
