@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import ProgressBar from "../../components/ProgressBar/ProgreeBar";
 import { IoMdArrowDropright } from "react-icons/io";
-
+import Link from "next/link";
+import FormHeader from "../../components/UI/FormHeader";
 const index = () => {
   return (
     <div className="">
@@ -9,10 +10,18 @@ const index = () => {
       <div className="my-4 md:my-8 w-[90%] md:w-[75%] lg:w-[60%] mx-auto">
         <ProgressBar progress={50} />
         <p className=" my-3 md:my-3 text-center text-[#535353] font-normal text-xs">
-          Schritt 6 von 6 -{" "}
+          Schritt 3 von 6 -{" "}
           <span className="font-semibold">Art und Zeitpunkt</span>{" "}
         </p>
       </div>
+      {/* adding the header for the form */}
+      <div className="w-[90%] md:w-[80%] lg:w-[80%] mx-auto">
+        <FormHeader text="Bisherige Anschrift" />
+      </div>
+      {/* adding the form data */}
+      <div className="w-[90%] md:w-[75%] lg:w-[60%] mx-auto my-4 md:my-4">
+        
+</div>
       {/* ADDED THE FORWARD AND BACK BUTTONS */}
       <div className="flex flex-col md:flex-row items-center justify-between w-[90%] md:w-[75%] lg:w-[60%] mx-auto">
         <button className="my-2 w-[80%] md:w-[12%] lg:w-[13%] xl:w-[15%] border-[1px] border-gray-300 px-5 md:px-5 py-4 md:py-2 rounded flex items-center justify-center text-gray-600">

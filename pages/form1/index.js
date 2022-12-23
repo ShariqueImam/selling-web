@@ -2,8 +2,14 @@ import React, { useState } from "react";
 import ProgressBar from "../../components/ProgressBar/ProgreeBar";
 import { IoMdArrowDropright } from "react-icons/io";
 import FormHeader from "../../components/UI/FormHeader";
+import Link from "next/link";
 const index = () => {
   const [V1, setV1] = useState("Privat");
+  const [V2, setV2] = useState("Privat");
+  const [V3, setV3] = useState("Umzug");
+  const handleSelect = (e) => {
+    setV3(e.target.value);
+  };
   return (
     <div className="">
       {/* ADDED THE HEADER FOR THE PROGRESS BARS  */}
@@ -54,7 +60,11 @@ const index = () => {
           Grund der Beantragung:
         </p>
         <div className="form">
-          <select name="forward_reason_business" required="required">
+          <select
+            name="forward_reason_business"
+            required="required"
+            onChange={handleSelect}
+          >
             <option value="">Bitte treffen Sie eine Auswahl</option>
             <option value="move">Umzug</option>
             <option value="holiday">Vorübergehende Abwesenheit</option>
@@ -72,7 +82,7 @@ const index = () => {
         <div
           className="flex my-2 md:my-3 "
           onChange={() =>
-            setV1("Nachsendung beginnt zum nächstmöglichen Zeitpunkt")
+            setV2("Nachsendung beginnt zum nächstmöglichen Zeitpunkt")
           }
         >
           <input
@@ -81,7 +91,7 @@ const index = () => {
             id="1"
             className="custom-radio"
             checked={
-              V1 == "Nachsendung beginnt zum nächstmöglichen Zeitpunkt"
+              V2 == "Nachsendung beginnt zum nächstmöglichen Zeitpunkt"
                 ? true
                 : false
             }
@@ -93,7 +103,7 @@ const index = () => {
         <div
           className="flex my-2 md:my-3"
           onChange={() =>
-            setV1("Nachsendung beginnt zu einem späterem Zeitpunkt")
+            setV2("Nachsendung beginnt zu einem späterem Zeitpunkt")
           }
         >
           <input
@@ -101,7 +111,7 @@ const index = () => {
             value="Nachsendung beginnt zu einem späterem Zeitpunkt"
             id="2"
             checked={
-              V1 == "Nachsendung beginnt zu einem späterem Zeitpunkt"
+              V2 == "Nachsendung beginnt zu einem späterem Zeitpunkt"
                 ? true
                 : false
             }
@@ -114,12 +124,14 @@ const index = () => {
       </div>
 
       {/* ADDED THE FORWARD AND BACK BUTTONS */}
-      <div className="flex flex-col md:flex-row items-center justify-end w-[90%] md:w-[75%] lg:w-[60%] mx-auto">
-        <button className="my-2 w-[80%] md:w-[12%] lg:w-[13%] xl:w-[15%] plan px-5 md:px-5 py-2 md:py-2 rounded flex items-center justify-center text-white">
-          <p>WEITER</p>
-          <IoMdArrowDropright className="text-4xl text-white" />
-        </button>
-      </div>
+      <Link href="/form2" >
+        <div className="flex flex-col md:flex-row items-center justify-end w-[90%] md:w-[75%] lg:w-[60%] mx-auto">
+          <button className="my-2 w-[80%] md:w-[12%] lg:w-[13%] xl:w-[15%] plan px-5 md:px-5 py-2 md:py-2 rounded flex items-center justify-center text-white">
+            <p>WEITER</p>
+            <IoMdArrowDropright className="text-4xl text-white" />
+          </button>
+        </div>
+      </Link>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+
 import { TiTick } from "react-icons/ti";
 import Link from "next/link";
 import { IoMdArrowDropright } from "react-icons/io";
@@ -48,10 +49,12 @@ const HomeCard = () => {
           <Image src="/assets/1.png" width={100} height={100} />
         </div>
         <button className="green flex  items-center justify-center hover:scale-[1.12] transtion duration-[100ms] mt-7 md:mt-9 py-3">
-          <p className="text-white text-3xl md:text-4xl font-semibold tracking-widest">
-            BEANTRAGEN
-          </p>
-          <IoMdArrowDropright className="text-5xl text-white" />
+          <Link href="/form1" className="flex items-center justify-center">
+            <p className="text-white text-3xl md:text-4xl font-semibold tracking-widest">
+              BEANTRAGEN
+            </p>
+            <IoMdArrowDropright className="text-5xl text-white" />
+          </Link>
         </button>
       </div>
       <p className="text-gray-500 py-5 md:py-7 text-center tracking-wide">

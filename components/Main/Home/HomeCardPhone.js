@@ -3,6 +3,7 @@ import Image from "next/image";
 import { TiTick } from "react-icons/ti";
 import Link from "next/link";
 import { IoMdArrowDropright } from "react-icons/io";
+
 const style = {
   wrapper:
     "flex flex-col  w-[95%] md:w-[75%] mx-auto bg-white w-[90%] md:w-[45%] pt-8 md:pt-12 nav sm:hidden",
@@ -29,10 +30,12 @@ const HomeCardPhone = () => {
           </p>
         </div>
         <button className="green flex  items-center justify-center hover:scale-[1.12] transtion duration-[80ms] mt-7 md:mt-9 py-2 mx-5 px-3">
-          <p className="text-white text-2xl  font-semibold tracking-widest">
-            BEANTRAGEN
-          </p>
-          <IoMdArrowDropright className="text-5xl text-white" />
+          <Link href="/form1" className="flex items-center justify-center">
+            <p className="text-white text-2xl  font-semibold tracking-widest">
+              BEANTRAGEN
+            </p>
+            <IoMdArrowDropright className="text-5xl text-white" />
+          </Link>
         </button>
         <p className="text-gray-500 py-5 md:py-7 text-center tracking-wide">
           Jetzt schon ab 8,32 € im Monat
