@@ -5,7 +5,7 @@ const style = {
     " py-12 w-[100%] md:w-[100%] mx-auto  transform skew-y-[-3deg] bg-[#f0f0f0] ",
   heading:
     "text-[#535353] set-font font-normal text-2xl md:text-2xl px-12 py-12 text-center ",
-  reviewContainer: "flex flex-col md:flwx-row",
+  reviewContainer: "flex flex-col md:flex-row",
 };
 const Reviews = () => {
   return (

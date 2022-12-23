@@ -21,10 +21,10 @@ const Navbar = () => {
           </div>
           <div className="flex items-end justify-end flex-col">
             <p className="text-md font-semibold">01158-985-9</p>
-            <p className="text-xs text-gray-500">
+            <p className="text-[10px] md:text-xs text-gray-500">
               10a.m - 6 p.m (0.16/min from a german)
             </p>
-            <p className="text-xs text-gray-500">
+            <p className="text-[10px] md:text-xs text-gray-500">
               10a.m - 6 p.m (landing,max, 0.42/min mobile)
             </p>
           </div>
