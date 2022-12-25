@@ -77,6 +77,22 @@
   -moz-appearance: none;
   -webkit-appearance: none;
 }
+.c1 {
+  margin-right: 1.2rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  background: url("/radio-checked.png");
+  background-size: 100% 100%;
+}
+
+.c2 {
+  /* float: left; */
+  margin-right: 1.2rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  background: url("/radio.png");
+  background-size: 100% 100%;
+}
 
 .form > select:invalid {
   color: #9d9d9d;
@@ -130,4 +146,20 @@
 .custom-checkbox:checked {
   background: url(/checkbox-checked.png);
   background-size: 100% 100%;
+}
+.c4 {
+  width: 0.6rem;
+  height:2rem;
+  background-image: url(/checkbox.png);
+  background-size: cover;
+}
+.c3 {
+  width: 0.6rem;
+  height:2rem;
+  background-image: url(/checkbox-checked.png);
+  background-size: cover;
+}
+
+.shadow-price {
+  box-shadow: 0 0.4rem 0.9rem 0.1rem rgb(0 0 0 / 7%);
 }

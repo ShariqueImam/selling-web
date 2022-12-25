@@ -3,20 +3,24 @@ import ProgressBar from "../../components/ProgressBar/ProgreeBar";
 import { IoMdArrowDropright } from "react-icons/io";
 import FormHeader from "../../components/UI/FormHeader";
 import Link from "next/link";
+import Cookies from "js-cookie";
 const index = () => {
   const [V1, setV1] = useState("Privat");
   const [V2, setV2] = useState("Privat");
   const [V3, setV3] = useState("Umzug");
   const handleSelect = (e) => {
+    Cookies.set("reason", e.target.value);
     setV3(e.target.value);
   };
+  Cookies.set("choice", V1);
+  Cookies.set("forwarding", V2);
   return (
     <div className="">
       {/* ADDED THE HEADER FOR THE PROGRESS BARS  */}
       <div className="my-4 md:my-8 w-[90%] md:w-[80%] lg:w-[78%] mx-auto">
         <ProgressBar progress={16} />
         <p className=" my-3 md:my-3 text-center text-[#535353] font-normal text-xs">
-          Schritt 6 von 6 -
+          Schritt 1 von 6 -
           <span className="font-semibold">Art und Zeitpunkt</span>
         </p>
       </div>
@@ -48,11 +52,11 @@ const index = () => {
           <input
             type="radio"
             value="Geschäftlich"
-            id="2"
+            id="4"
             checked={V1 == "Geschäftlich" ? true : false}
             className="custom-radio"
           />
-          <label htmlFor="2" className="text-xs text-light text-[#535353]">
+          <label htmlFor="4" className="text-xs text-light text-[#535353]">
             Geschäftlich
           </label>
         </div>
@@ -88,7 +92,7 @@ const index = () => {
           <input
             type="radio"
             value="Nachsendung beginnt zum nächstmöglichen Zeitpunkt"
-            id="1"
+            id="2"
             className="custom-radio"
             checked={
               V2 == "Nachsendung beginnt zum nächstmöglichen Zeitpunkt"
@@ -96,7 +100,7 @@ const index = () => {
                 : false
             }
           />
-          <label htmlFor="1" className="text-xs text-light text-[#535353]">
+          <label htmlFor="2" className="text-xs text-light text-[#535353]">
             Nachsendung beginnt zum nächstmöglichen Zeitpunkt
           </label>
         </div>
@@ -109,7 +113,7 @@ const index = () => {
           <input
             type="radio"
             value="Nachsendung beginnt zu einem späterem Zeitpunkt"
-            id="2"
+            id="3"
             checked={
               V2 == "Nachsendung beginnt zu einem späterem Zeitpunkt"
                 ? true
@@ -117,14 +121,14 @@ const index = () => {
             }
             className="custom-radio"
           />
-          <label htmlFor="2" className="text-xs text-light text-[#535353]">
+          <label htmlFor="3" className="text-xs text-light text-[#535353]">
             Nachsendung beginnt zu einem späterem Zeitpunkt
           </label>
         </div>
       </div>
 
       {/* ADDED THE FORWARD AND BACK BUTTONS */}
-      <Link href="/form2" >
+      <Link href="/form2">
         <div className="flex flex-col md:flex-row items-center justify-end w-[90%] md:w-[75%] lg:w-[60%] mx-auto">
           <button className="my-2 w-[80%] md:w-[12%] lg:w-[13%] xl:w-[15%] plan px-5 md:px-5 py-2 md:py-2 rounded flex items-center justify-center text-white">
             <p>WEITER</p>

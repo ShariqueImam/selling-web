@@ -3,6 +3,7 @@ import ProgressBar from "../../components/ProgressBar/ProgreeBar";
 import { IoMdArrowDropright } from "react-icons/io";
 import FormHeader from "../../components/UI/FormHeader";
 import Link from "next/link";
+import Cookies from "js-cookie";
 const index = () => {
   const [V1, setV1] = useState("");
   const [N1, setN1] = useState("");
@@ -13,15 +14,34 @@ const index = () => {
   const [C1, setC1] = useState(false);
   const [C2, setC2] = useState(false);
   const [C3, setC3] = useState(false);
-  const [R1, setR1] = useState("");
-  const [R2, setR2] = useState("");
+  const [D1, setD1] = useState(false);
+  const [D2, setD2] = useState(false);
+  const [D3, setD3] = useState(false);
+  const [R1, setR1] = useState("Ja");
+  const [T1, setT1] = useState("");
+  const [T2, setT2] = useState("");
+  const [T3, setT3] = useState("");
+  const [T4, setT4] = useState("");
 
   const handleSelect = (e) => {
+    Cookies.set("salutation", e.target.value);
     setV1(e.target.value);
   };
-  const style = {
-    input: "",
+  const handle1 = (e) => {
+    Cookies.set("date", e.target.value);
+    setD1(e.target.value);
   };
+  const handle2 = (e) => {
+    Cookies.set("month", e.target.value);
+    setD2(e.target.value);
+  };
+  const handle3 = (e) => {
+    Cookies.set("year", e.target.value);
+    setD3(e.target.value);
+  };
+  Cookies.set("2opt1", C1);
+  Cookies.set("2opt2", C2);
+  Cookies.set("2opt3", C3);
   return (
     <div className="">
       {/* ADDED THE HEADER FOR THE PROGRESS BARS  */}
@@ -29,7 +49,7 @@ const index = () => {
         <ProgressBar progress={32} />
         <p className=" my-3 md:my-3 text-center text-[#535353] font-normal text-xs">
           Schritt 2 von 6 -{" "}
-          <span className="font-semibold">Art und Zeitpunkt</span>{" "}
+          <span className="font-semibold">Empfänger-Angaben</span>{" "}
         </p>
       </div>
       {/* adding the form content */}
@@ -46,9 +66,8 @@ const index = () => {
             onChange={handleSelect}
           >
             <option value="">Bitte treffen Sie eine Auswahl</option>
-            <option value="move">Umzug</option>
-            <option value="holiday">Vorübergehende Abwesenheit</option>
-            <option value="insolvency">Insolvenz- und Betreuungsfall</option>
+            <option value="move">Herr</option>
+            <option value="holiday">Frau</option>
           </select>
         </div>
         {/* adding the name */}
@@ -64,7 +83,10 @@ const index = () => {
               type="text"
               className="in"
               value={N1}
-              onChange={(e) => setN1(e.target.value)}
+              onChange={(e) => {
+                Cookies.set("firstname", e.target.value);
+                setN1(e.target.value);
+              }}
             />
           </section>
           <section className="flex flex-col w-[100%] md:w-[45%]">
@@ -78,7 +100,82 @@ const index = () => {
               type="text"
               className="in"
               value={N2}
-              onChange={(e) => setN2(e.target.value)}
+              onChange={(e) => {
+                Cookies.set("surname", e.target.value);
+                setN2(e.target.value);
+              }}
+            />
+          </section>
+        </div>
+        <div className="flex justify-between flex-col md:flex-row my-3 md:my-6">
+          <section className="flex flex-col w-[100%] md:w-[45%]">
+            <label
+              htmlFor="1"
+              className="text-[#535353] font-light my-2 md:my-3"
+            >
+              Straße:
+            </label>
+            <input
+              type="text"
+              className="in"
+              value={T1}
+              onChange={(e) => {
+                Cookies.set("2road", e.target.value);
+                setT1(e.target.value);
+              }}
+            />
+          </section>
+          <section className="flex flex-col w-[100%] md:w-[45%]">
+            <label
+              htmlFor="1"
+              className="text-[#535353] font-light my-2 md:my-3"
+            >
+              Neue Hausnummer:
+            </label>
+            <input
+              type="text"
+              className="in"
+              value={T2}
+              onChange={(e) => {
+                Cookies.set("2newhousenumber", e.target.value);
+                setT2(e.target.value);
+              }}
+            />
+          </section>
+        </div>
+        <div className="flex justify-between flex-col md:flex-row my-3 md:my-6">
+          <section className="flex flex-col w-[100%] md:w-[45%]">
+            <label
+              htmlFor="1"
+              className="text-[#535353] font-light my-2 md:my-3"
+            >
+              Postleitzahl:
+            </label>
+            <input
+              type="text"
+              className="in"
+              value={T3}
+              onChange={(e) => {
+                Cookies.set("2PostalCode", e.target.value);
+                setT3(e.target.value);
+              }}
+            />
+          </section>
+          <section className="flex flex-col w-[100%] md:w-[45%]">
+            <label
+              htmlFor="1"
+              className="text-[#535353] font-light my-2 md:my-3"
+            >
+              Ort:{" "}
+            </label>
+            <input
+              type="text"
+              className="in"
+              value={T4}
+              onChange={(e) => {
+                Cookies.set("2Location", e.target.value);
+                setT4(e.target.value);
+              }}
             />
           </section>
         </div>
@@ -89,6 +186,7 @@ const index = () => {
               name="dob_day"
               required="required"
               className="my-2 md:my-3 mr-3 md:mr-4"
+              onChange={handle1}
             >
               <option value="">Tag</option> <option value="1">1</option>{" "}
               <option value="2">2</option> <option value="3">3</option>{" "}
@@ -111,6 +209,7 @@ const index = () => {
               name="dob_month"
               required="required"
               className="my-2 md:my-3 mr-3 md:mr-4"
+              onChange={handle2}
             >
               <option value="">Monat</option> <option value="1">1</option>{" "}
               <option value="2">2</option> <option value="3">3</option>{" "}
@@ -124,6 +223,7 @@ const index = () => {
               name="dob_year"
               required="required"
               className="my-2 md:my-3 mr-3 md:mr-4"
+              onChange={handle3}
             >
               <option value="">Jahr</option> <option value="2022">2022</option>{" "}
               <option value="2021">2021</option>{" "}
@@ -238,7 +338,10 @@ const index = () => {
             type="number"
             className="in"
             value={N3}
-            onChange={(e) => setN3(e.target.value)}
+            onChange={(e) => {
+              Cookies.set("2phonenumber", e.target.value);
+              setN3(e.target.value);
+            }}
           />
         </section>
         <section className="flex flex-col  my-4 md:my-6">
@@ -249,7 +352,10 @@ const index = () => {
             type="email"
             className="in"
             value={N4}
-            onChange={(e) => setN4(e.target.value)}
+            onChange={(e) => {
+              Cookies.set("2email", e.target.value);
+              setN4(e.target.value);
+            }}
           />
         </section>
         <section className="flex flex-col my-4 md:my-6">
@@ -260,7 +366,10 @@ const index = () => {
             type="email"
             className="in"
             value={N5}
-            onChange={(e) => setN5(e.target.value)}
+            onChange={(e) => {
+              Cookies.set("2validemail", e.target.value);
+              setN5(e.target.value);
+            }}
           />
         </section>
       </div>
@@ -284,13 +393,13 @@ const index = () => {
             Ja
           </label>
         </div>
-        <div className="flex my-2 md:my-3" onChange={() => setR2("Nein")}>
+        <div className="flex my-2 md:my-3" onChange={() => setR1("Nein")}>
           <input
             type="radio"
             value="Nein
             "
             id="2"
-            checked={R2 == "Nein" ? true : false}
+            checked={R1 == "Nein" ? true : false}
             className="custom-radio"
           />
           <label htmlFor="2" className="text-xs text-light text-[#535353]">
@@ -310,7 +419,9 @@ const index = () => {
               name="optional_parcels"
               class="custom-checkbox"
               value={C1}
-              onChange={() => setC1((prev) => !prev)}
+              onChange={() => {
+                setC1((prev) => !prev);
+              }}
             />
             <span>Päckchen, Pakete</span> <a class="field__helper">?</a>
           </label>
@@ -344,13 +455,13 @@ const index = () => {
 
       {/* ADDED THE FORWARD AND BACK BUTTONS */}
       <div className="flex flex-col md:flex-row items-center justify-between w-[90%] md:w-[75%] lg:w-[60%] mx-auto">
-        <Link href="/form1">
-          <button className="my-2   border-[1px] border-gray-300 px-5 md:px-5 py-4 md:py-2 rounded flex items-center justify-center text-gray-600">
+        <Link href="/form1" className="w-[80%] md:w-auto">
+          <button className="my-2 w-[100%]  border-[1px] border-gray-300 px-5 md:px-5 py-4 md:py-2 rounded flex items-center justify-center text-gray-600">
             <p>ZURUCK</p>
           </button>
         </Link>
-        <Link href="/form3">
-          <button className="my-2   plan px-5 md:px-5 py-2 md:py-2 rounded flex items-center justify-center text-white">
+        <Link href="/form3" className="w-[80%] md:w-auto">
+          <button className="my-2  w-[100%] plan px-5 md:px-5 py-2 md:py-2 rounded flex items-center justify-center text-white">
             <p>WEITER</p>
             <IoMdArrowDropright className="text-4xl text-white" />
           </button>
