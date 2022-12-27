@@ -9,7 +9,7 @@ const Footer = () => {
           <Link href="/help">
             <p className="font-normal mx-3 md:mx-4 cursor-pointer text-xs md:text-md">Hilfe</p>
           </Link>
-          <Link href="/terms-and-conditions">
+          <Link href="/agb">
             <p className="font-normal mx-3 md:mx-4 cursor-pointer text-xs md:text-md">AGB</p>
           </Link>
           <Link href="/privacy">
