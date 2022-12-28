@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="flex items-center justify-between w-[90%] sm:w-[90%] md:w-[60%] mx-auto flex-col md:flex-row">
         <h2>nachsendeauftrag-einrichten.de</h2>
         <div className="flex items-center justify-center py-3 md:py-4">
-          <Link href="/help">
+          <Link href="/hilfe">
             <p className="font-normal mx-3 md:mx-4 cursor-pointer text-xs md:text-md">Hilfe</p>
           </Link>
           <Link href="/agb">
