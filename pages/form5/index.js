@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import ProgressBar from "../../components/ProgressBar/ProgreeBar";
 import { useRouter } from "next/router";
-
+import { loadStripe } from "@stripe/stripe-js";
+import axios from "axios";
 import { IoMdArrowDropright } from "react-icons/io";
 import FormHeader from "../../components/UI/FormHeader";
 import Image from "next/image";
@@ -12,11 +13,41 @@ const index = () => {
   const [Pay, setPay] = useState("3");
   const [P1, setP1] = useState(false);
   const [P2, setP2] = useState(false);
+  const [item, setItem] = useState({
+    name: "Selling Website Subscription Plan",
+    description: "Subs Plan per month",
+    image:
+      "https://res.cloudinary.com/shariqcloud/image/upload/v1672344807/Asphalt%20Homes/Home%20Tour/logo_c9pbe0.png",
+    quantity: 1,
+    price: 15,
+  });
+  const publishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
+  const stripePromise = loadStripe(publishableKey);
   const handleClick = (value) => {
+    setItem({
+      name: "Selling Website Subscription Plan",
+      description: "Subs Plan per month",
+      image:
+        "https://res.cloudinary.com/shariqcloud/image/upload/v1672344807/Asphalt%20Homes/Home%20Tour/logo_c9pbe0.png",
+      quantity: 1,
+      price: value,
+    });
     setPrice(value);
   };
   const handleClickPay = (value) => {
     setPay(value);
+  };
+  const createCheckOutSession = async () => {
+    const stripe = await stripePromise;
+    const checkoutSession = await axios.post("/api/create-stripe-session", {
+      item: item,
+    });
+    const result = await stripe.redirectToCheckout({
+      sessionId: checkoutSession.data.id,
+    });
+    if (result.error) {
+      alert(result.error.message);
+    }
   };
   return (
     <div className="">
@@ -43,7 +74,7 @@ const index = () => {
             <p>6 Monate</p>
           </div>
           <div className="flex">
-            <p className="mr-1 md:mr-2 font-semibold">4,98 € </p>
+            <p className="mr-1 md:mr-2 font-semibold">14,98 € </p>
             <p>pro Monat (inkl. 19 % MwSt.)</p>
           </div>
         </div>
@@ -60,7 +91,7 @@ const index = () => {
             <p>12 Monate</p>
           </div>
           <div className="flex">
-            <p className="mr-1 md:mr-2 font-semibold">4,98 € </p>
+            <p className="mr-1 md:mr-2 font-semibold">8,33 € </p>
             <p>pro Monat (inkl. 19 % MwSt.)</p>
           </div>
         </div>
@@ -127,7 +158,10 @@ const index = () => {
             <Image src="/assets/1.png" width={100} height={100} />
           </div>
         </div>
-        <button className="bg-[#ffb900] px-4 md:px-6 py-4 md:py-4 rounded font-semibold my-3 md:my-12">
+        <button
+          className="bg-[#ffb900] px-4 md:px-6 py-4 md:py-4 rounded font-semibold my-3 md:my-12"
+          onClick={createCheckOutSession}
+        >
           Make Payment
         </button>
       </div>
