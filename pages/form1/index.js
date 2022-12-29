@@ -2,18 +2,30 @@ import React, { useState } from "react";
 import ProgressBar from "../../components/ProgressBar/ProgreeBar";
 import { IoMdArrowDropright } from "react-icons/io";
 import FormHeader from "../../components/UI/FormHeader";
+import { useRouter } from "next/router";
+
 import Link from "next/link";
 import Cookies from "js-cookie";
 const index = () => {
   const [V1, setV1] = useState("Privat");
-  const [V2, setV2] = useState("Privat");
-  const [V3, setV3] = useState("Umzug");
+  const [V2, setV2] = useState(
+    "Nachsendung beginnt zum nächstmöglichen Zeitpunkt"
+  );
+  const [V3, setV3] = useState("Bitte treffen Sie eine Auswahl");
+  const [Allowed, setAllowed] = useState(null);
   const handleSelect = (e) => {
     Cookies.set("reason", e.target.value);
     setV3(e.target.value);
   };
+  const router = useRouter();
   Cookies.set("choice", V1);
   Cookies.set("forwarding", V2);
+  const handleLink = () => {
+    if (V3 !== "Bitte treffen Sie eine Auswahl") {
+      router.push("/form2");
+    }
+    setAllowed(true);
+  };
   return (
     <div className="">
       {/* ADDED THE HEADER FOR THE PROGRESS BARS  */}
@@ -128,14 +140,24 @@ const index = () => {
       </div>
 
       {/* ADDED THE FORWARD AND BACK BUTTONS */}
-      <Link href="/form2">
-        <div className="flex flex-col md:flex-row items-center justify-end w-[90%] md:w-[75%] lg:w-[60%] mx-auto">
-          <button className="my-2 w-[80%] md:w-[12%] lg:w-[13%] xl:w-[15%] plan px-5 md:px-5 py-2 md:py-2 rounded flex items-center justify-center text-white">
-            <p>WEITER</p>
-            <IoMdArrowDropright className="text-4xl text-white" />
-          </button>
+      {Allowed && (
+        <div className="bg-[#ffbdbd] px-5 md:px-12 py-2 md:py-5  w-[90%] md:w-[75%] lg:w-[60%] mx-auto rounded my-5 md:my-12">
+          <p className="text-[#80504f]">
+            Sie haben einen Formfehler. Bitte prüfen Sie die Felder. Haben Sie
+            alle relevanten Felder ausgefüllt?
+          </p>
         </div>
-      </Link>
+      )}
+
+      <div
+        className="flex flex-col md:flex-row items-center justify-end w-[90%] md:w-[75%] lg:w-[60%] mx-auto"
+        onClick={handleLink}
+      >
+        <button className="my-2 w-[80%] md:w-[12%] lg:w-[13%] xl:w-[15%] plan px-5 md:px-5 py-2 md:py-2 rounded flex items-center justify-center text-white">
+          <p>WEITER</p>
+          <IoMdArrowDropright className="text-4xl text-white" />
+        </button>
+      </div>
     </div>
   );
 };

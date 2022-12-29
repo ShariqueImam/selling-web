@@ -1,7 +1,8 @@
 import React from "react";
 import ProgressBar from "../../components/ProgressBar/ProgreeBar";
 import { IoMdArrowDropright } from "react-icons/io";
-import FormHeader from "../../components/UI/FormHeader";
+import FormHeader from "../../components/UI/FormHeader";import { useRouter } from 'next/router'
+
 import Cookies from "js-cookie";
 import Link from "next/link";
 const index = () => {

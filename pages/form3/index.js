@@ -4,10 +4,14 @@ import { IoMdArrowDropright } from "react-icons/io";
 import Link from "next/link";
 import FormHeader from "../../components/UI/FormHeader";
 import Cookies from "js-cookie";
+import { useRouter } from "next/router";
+
 const index = () => {
-  const [V1, setV1] = useState("");
-  const [V2, setV2] = useState("");
-  const [V3, setV3] = useState("");
+  const router = useRouter();
+  const [Allowed, setAllowed] = useState(null);
+  const [V1, setV1] = useState("Bitte treffen Sie eine Auswahl");
+  const [V2, setV2] = useState("Bitte treffen Sie eine Auswahl");
+  const [V3, setV3] = useState("Bitte treffen Sie eine Auswahl");
   const [N1, setN1] = useState("");
   const [N2, setN2] = useState("");
   const [N3, setN3] = useState("");
@@ -19,7 +23,27 @@ const index = () => {
   const [C4, setC4] = useState("");
   const [C5, setC5] = useState("");
   const [C6, setC6] = useState("");
-
+  const handleLink = () => {
+    if (
+      V1 !== "Bitte treffen Sie eine Auswahl" &&
+      V2 !== "Bitte treffen Sie eine Auswahl" &&
+      V3 !== "Bitte treffen Sie eine Auswahl" &&
+      N1 !== "" &&
+      N2 !== "" &&
+      N3 !== "" &&
+      N4 !== "" &&
+      N5 !== "" &&
+      C1 !== "" &&
+      C2 !== "" &&
+      C3 !== "" &&
+      C4 !== "" &&
+      C5 !== "" &&
+      C6 !== ""
+    ) {
+      router.push("/form4");
+    }
+    setAllowed(true);
+  };
   const handleSelect1 = (e) => {
     Cookies.set("prevAddressType", e.target.value);
     setV1(e.target.value);
@@ -37,8 +61,7 @@ const index = () => {
       <div className="my-4 md:my-8 w-[90%] md:w-[75%] lg:w-[60%] mx-auto">
         <ProgressBar progress={50} />
         <p className=" my-3 md:my-3 text-center text-[#535353] font-normal text-xs">
-          Schritt 3 von 6 -{" "}
-          <span className="font-semibold"> Anschriften</span>{" "}
+          Schritt 3 von 6 - <span className="font-semibold"> Anschriften</span>{" "}
         </p>
       </div>
       {/* adding the header for the form */}
@@ -161,8 +184,8 @@ const index = () => {
             required="required"
             onChange={handleSelect2}
           >
-            <option value="">Bitte treffen Sie eine Auswahl</option>{" "}
-            <option value="standard" selected>
+            <option value="" selected>Bitte treffen Sie eine Auswahl</option>{" "}
+            <option value="standard" >
               Standard
             </option>{" "}
             <option value="pobox">Postfach</option>
@@ -284,7 +307,14 @@ const index = () => {
         </div>
       </div>
       {/* adding the 2nd form data */}
-      <div className="w-[90%] md:w-[75%] lg:w-[60%] mx-auto my-4 md:my-4"></div>
+      {Allowed && (
+        <div className="bg-[#ffbdbd] px-5 md:px-12 py-2 md:py-5  w-[90%] md:w-[75%] lg:w-[60%] mx-auto rounded my-5 md:my-12">
+          <p className="text-[#80504f]">
+            Sie haben einen Formfehler. Bitte prüfen Sie die Felder. Haben Sie
+            alle relevanten Felder ausgefüllt?
+          </p>
+        </div>
+      )}
       {/* ADDED THE FORWARD AND BACK BUTTONS */}
       <div className="flex flex-col md:flex-row items-center justify-between w-[90%] md:w-[75%] lg:w-[60%] mx-auto">
         <Link href="/form2" className="w-[80%] md:w-auto">
@@ -292,12 +322,12 @@ const index = () => {
             <p>ZURUCK</p>
           </button>
         </Link>
-        <Link href="/form4" className="w-[80%] md:w-auto">
+        <div className="w-[80%] md:w-auto" onClick={handleLink}>
           <button className="my-2 w-[100%] plan px-5 md:px-5 py-2 md:py-2 rounded flex items-center justify-center text-white">
             <p>WEITER</p>
             <IoMdArrowDropright className="text-4xl text-white" />
           </button>
-        </Link>
+        </div>
       </div>
     </div>
   );

@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import ProgressBar from "../../components/ProgressBar/ProgreeBar";
 import { IoMdArrowDropright } from "react-icons/io";
+import { useRouter } from "next/router";
+
 import FormHeader from "../../components/UI/FormHeader";
 import Link from "next/link";
 import Cookies from "js-cookie";
 const index = () => {
+  const router = useRouter()
+  const [Allowed, setAllowed] = useState(null);
   const [V1, setV1] = useState("");
   const [N1, setN1] = useState("");
   const [N2, setN2] = useState("");
@@ -22,7 +26,25 @@ const index = () => {
   const [T2, setT2] = useState("");
   const [T3, setT3] = useState("");
   const [T4, setT4] = useState("");
-
+  const handleLink = () => {
+    if (
+      V1 !== "" &&
+      N1 !== "" &&
+      N2 !== "" &&
+      N3 !== "" &&
+      N4 !== "" &&
+      N5 !== "" &&
+      T1 !== "" &&
+      T2 !== "" &&
+      T3 !== "" &&
+      T4 !== ""
+    ) {
+      if (C1 || C2 || C3) {
+        router.push("/form3");
+      }
+    }
+    setAllowed(true);
+  };
   const handleSelect = (e) => {
     Cookies.set("salutation", e.target.value);
     setV1(e.target.value);
@@ -452,7 +474,14 @@ const index = () => {
           </label>
         </div>
       </div>
-
+      {Allowed && (
+        <div className="bg-[#ffbdbd] px-5 md:px-12 py-2 md:py-5  w-[90%] md:w-[75%] lg:w-[60%] mx-auto rounded my-5 md:my-12">
+          <p className="text-[#80504f]">
+            Sie haben einen Formfehler. Bitte prüfen Sie die Felder. Haben Sie
+            alle relevanten Felder ausgefüllt?
+          </p>
+        </div>
+      )}
       {/* ADDED THE FORWARD AND BACK BUTTONS */}
       <div className="flex flex-col md:flex-row items-center justify-between w-[90%] md:w-[75%] lg:w-[60%] mx-auto">
         <Link href="/form1" className="w-[80%] md:w-auto">
@@ -460,12 +489,12 @@ const index = () => {
             <p>ZURUCK</p>
           </button>
         </Link>
-        <Link href="/form3" className="w-[80%] md:w-auto">
+        <div className="w-[80%] md:w-auto" onClick={handleLink}>
           <button className="my-2  w-[100%] plan px-5 md:px-5 py-2 md:py-2 rounded flex items-center justify-center text-white">
             <p>WEITER</p>
             <IoMdArrowDropright className="text-4xl text-white" />
           </button>
-        </Link>
+        </div>
       </div>
     </div>
   );
