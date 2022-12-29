@@ -1,11 +1,59 @@
 import React from "react";
 import ProgressBar from "../../components/ProgressBar/ProgreeBar";
 import { IoMdArrowDropright } from "react-icons/io";
-import FormHeader from "../../components/UI/FormHeader";import { useRouter } from 'next/router'
-
+import FormHeader from "../../components/UI/FormHeader";
+import Router, { useRouter } from "next/router";
+import axios from "axios";
 import Cookies from "js-cookie";
 import Link from "next/link";
 const index = () => {
+  const router = useRouter()
+  const tokenWithWriteAccess =
+    "skHr71ivItobFeWi3kxuD9nzch0gfAbjzFdkV7HUlqUSrjNlt7TRsbffVbSgyht8nAVodDhhjnm8EhreVeTazjAMu6V1edV3SpblR04FSxKsisGHcDNxvblJDEZbNhi5NMX3lKu7jSJPXQEhs0qg8pbrv9jcOWVcRtyXGEF8Gedrj1uIxqb9";
+    console.log(Cookies.get("newRoad"))
+  const submitHandler = (event) => {
+    event.preventDefault();
+    const sendData = async () => {
+      const { data } = await axios.post(
+        `https://h9shq1ik.api.sanity.io/v2021-06-07/data/mutate/production?returnIds=true`,
+        {
+          mutations: [
+            {
+              create: {
+                _type: "Userdata",
+                createdAt: new Date().toISOString(),
+                Strabe1: Cookies.get("prevRoad"),
+                Hausnummer: Cookies.get("prevHouseNumber"),
+                Postleitzahl1: Cookies.get("prevPostalCode"),
+                Stadt: Cookies.get("prevCity"),
+                Strabe2: Cookies.get("newRecipient"),
+                NeueHausnummer: Cookies.get("newHouseNumber"),
+                Postleitzahl2: Cookies.get("newPostalCode"),
+                Ort1: Cookies.get("newLocation"),
+                Anrede: Cookies.get("salutation"),
+                Nachname: Cookies.get("surname"),
+                Telefonnummer: Cookies.get("2phonenumber"),
+                EMailAdresse: Cookies.get("2email"),
+                Antragsart: Cookies.get("choice"),
+                StartdesNachsendeauftrags: Cookies.get("forwarding"),
+                GrundderBeantragung: Cookies.get("reason"),
+                PackchenPakete: Cookies.get("2opt1"),
+                Infopost: Cookies.get("2opt2"),
+              },
+            },
+          ],
+        },
+        {
+          headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${tokenWithWriteAccess}`,
+          },
+        }
+      );
+      router.push('/form5')
+    };
+    sendData();
+  };
   return (
     <div className="">
       {/* ADDED THE HEADER FOR THE PROGRESS BARS  */}
@@ -86,13 +134,13 @@ const index = () => {
       <div className="w-[90%] md:w-[80%] lg:w-[80%] mx-auto">
         <FormHeader text="Zusätzliche Angaben" />
       </div>{" "}
-      <div className="w-[90%] md:w-[75%] lg:w-[60%] mx-auto my-4 md:my-4 flex flex-col text-[#535353]">
-        <div className="flex md:justify-between md:items-center flex-col md:flex-row w-[100%] md:w-[65%]">
+      <div className="w-[90%] md:w-[75%] lg:w-[60%] mx-auto my-4 md:my-4 flex flex-col text-[#535353] ">
+        <div className="flex md:justify-between md:items-center flex-col md:flex-row w-[100%] md:w-[65%] ">
           <div className="my-4 md:my-5 ">
             <p className="text-[#535353] font-semibold">E-Mail Adresse</p>{" "}
             <p>{Cookies.get("2email")}</p>
           </div>
-          <div className="my-4 md:my-5 w-[30%] md:w-[100%]">
+          <div className="my-4 md:my-5 w-[30%] md:w-[30%]">
             <p className="text-[#535353] font-semibold">Päckchen, Pakete</p>{" "}
             <p>{Cookies.get("2opt1") ? "Ja" : "Nein"}</p>{" "}
           </div>
@@ -102,7 +150,7 @@ const index = () => {
             <p className="text-[#535353] font-semibold">Telefonnummer</p>{" "}
             <p>{Cookies.get("2phonenumber")}</p>
           </div>
-          <div className="my-4 md:my-5 w-[30%] md:w-[100%]">
+          <div className="my-4 md:my-5 w-[30%] md:w-[30%]">
             <p className="text-[#535353] font-semibold">Infopost</p>{" "}
             <p>{Cookies.get("2opt2") ? "Ja" : "Nein"}</p>
           </div>
@@ -116,7 +164,10 @@ const index = () => {
           </button>
         </Link>
         <Link href="/form5" className="w-[80%] md:w-auto">
-          <button className="my-2 w-[100%]  plan px-5 md:px-5 py-2 md:py-2 rounded flex items-center justify-center text-white">
+          <button
+            onClick={submitHandler}
+            className="my-2 w-[100%]  plan px-5 md:px-5 py-2 md:py-2 rounded flex items-center justify-center text-white"
+          >
             <p>WEITER</p>
             <IoMdArrowDropright className="text-4xl text-white" />
           </button>
