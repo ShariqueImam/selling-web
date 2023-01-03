@@ -130,7 +130,7 @@ const Index = () => {
           Umhüllung und Express-Sendungen. Gleiches gilt für Pressesendungen
           (z.B. Kunden- oder Mitarbeiterzeitschriften) und Postvertriebsstücke
           (z.B. Tageszeitungen oder Nachrichtenmagazine), nachfolgend
-          "Pressepost".
+          Pressepost.
         </p>
         <p className={style.para}>
           Ausgeschlossen ist ferner die Nachsendung in das Ausland von
