@@ -3,7 +3,7 @@ const style = {
   heading: "font-semibold my-2 md:my-3 text-sm",
   para: "text-light my-2 md:my-3 leading-[30px]",
 };
-const index = () => {
+const Index = () => {
   const [Option, setOption] = useState("");
   const handleSelect = (e) => {
     setOption(e.target.value);
@@ -184,4 +184,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;
