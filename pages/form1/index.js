@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 
 import Link from "next/link";
 import Cookies from "js-cookie";
-const index = () => {
+const Index = () => {
   const [V1, setV1] = useState("Privat");
   const [V2, setV2] = useState(
     "Nachsendung beginnt zum nächstmöglichen Zeitpunkt"
@@ -162,4 +162,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

@@ -6,7 +6,7 @@ import FormHeader from "../../components/UI/FormHeader";
 import Cookies from "js-cookie";
 import { useRouter } from "next/router";
 
-const index = () => {
+const Index = () => {
   const router = useRouter();
   const [Allowed, setAllowed] = useState(null);
   const [V1, setV1] = useState("Standard");
@@ -577,4 +577,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

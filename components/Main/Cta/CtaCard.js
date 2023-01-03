@@ -4,7 +4,8 @@ import { TiTick } from "react-icons/ti";
 import Link from "next/link";
 import { IoMdArrowDropright } from "react-icons/io";
 const style = {
-  wrapper: "flex flex-col mx-auto bg-white  w-[90%] md:w-[40%] pt-8 md:pt-12 my-4 yellow-content",
+  wrapper:
+    "flex flex-col mx-auto bg-white  w-[90%] md:w-[40%] pt-8 md:pt-12 my-4 yellow-content",
 };
 const CtaCard = () => {
   return (
@@ -13,7 +14,7 @@ const CtaCard = () => {
         <div className="flex items-center justify-start py-2 md:py-0 px-6 md:px-8 ">
           <TiTick className="text-green-500 text-2xl md:text-5xl mx-2 hidden sm:flex" />
           <p className="text-secondary">
-          Nachsendeauftrag einfach und bequem einrichten
+            Nachsendeauftrag einfach und bequem einrichten
           </p>
         </div>
         <div className="flex items-center justify-start py-2 md:py-0 px-6 md:px-8">
@@ -37,10 +38,12 @@ const CtaCard = () => {
           <Image src="/assets/1.png" width={80} height={80} />
         </div>
         <button className="green flex  items-center justify-center hover:scale-[1.12] transtion duration-[100ms] mt-7 md:mt-9 py-3">
-          <p className="text-white text-3xl md:text-4xl font-semibold tracking-widest">
-            BEANTRAGEN
-          </p>
-          <IoMdArrowDropright className="text-5xl text-white" />
+          <Link href="/form1" className="flex">
+            <p className="text-white text-3xl md:text-4xl font-semibold tracking-widest">
+              BEANTRAGEN
+            </p>
+            <IoMdArrowDropright className="text-5xl text-white" />
+          </Link>
         </button>
       </div>
     </div>

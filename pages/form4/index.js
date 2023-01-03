@@ -6,7 +6,7 @@ import Router, { useRouter } from "next/router";
 import axios from "axios";
 import Cookies from "js-cookie";
 import Link from "next/link";
-const index = () => {
+const Index = () => {
   const router = useRouter()
   const tokenWithWriteAccess =
     "skHr71ivItobFeWi3kxuD9nzch0gfAbjzFdkV7HUlqUSrjNlt7TRsbffVbSgyht8nAVodDhhjnm8EhreVeTazjAMu6V1edV3SpblR04FSxKsisGHcDNxvblJDEZbNhi5NMX3lKu7jSJPXQEhs0qg8pbrv9jcOWVcRtyXGEF8Gedrj1uIxqb9";
@@ -177,4 +177,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

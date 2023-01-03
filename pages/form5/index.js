@@ -8,7 +8,7 @@ import FormHeader from "../../components/UI/FormHeader";
 import Image from "next/image";
 import Cookies from "js-cookie";
 import Link from "next/link";
-const index = () => {
+const Index = () => {
   const [Price, setPrice] = useState("6");
   const [Pay, setPay] = useState("3");
   const [P1, setP1] = useState(false);
@@ -277,4 +277,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;
