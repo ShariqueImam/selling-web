@@ -5,7 +5,7 @@ import Link from "next/link";
 import FormHeader from "../../components/UI/FormHeader";
 import Cookies from "js-cookie";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
-
+import SingleOne from "../../components/Modal/SingleOne";
 import { useRouter } from "next/router";
 
 const Index = () => {
@@ -77,7 +77,10 @@ const Index = () => {
             <p className="text-[#535353] font-light">
               Art der bisherigen Anschrift:
             </p>
-            <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+            <SingleOne
+              heading="Wählen Sie die Art der bisherigen Adresse"
+              text="Geben Sie hier an, ob Ihre Sendungen bisher an eine herkommliche Adresse (Wohnung, Haus, Briefkasten) zugestellt wurden oder ob die Sendungen an ein Postfach geliefert wurden."
+            />
           </div>
           <select
             name="address_type"
@@ -96,7 +99,10 @@ const Index = () => {
           <section className="flex flex-col w-[100%] md:w-[45%]">
             <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
               <p className="text-[#535353] font-light">Straße: </p>
-              <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+              <SingleOne
+                heading="Bisheriger Straßenname"
+                text="Geben Sie Ihre bisherige Straße an. Bspw.: Bahnhofstraße. Max. 40 Zeichen."
+              />
             </div>
             <input
               type="text"
@@ -111,7 +117,10 @@ const Index = () => {
           <section className="flex flex-col w-[100%] md:w-[45%]">
             <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
               <p className="text-[#535353] font-light"> Hausnummer: </p>
-              <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+              <SingleOne
+                heading="Bisherige Hausnummer"
+                text="Geben Sie Ihre hier Ihre bisherige Hausnummer an."
+              />
             </div>
             <input
               type="text"
@@ -127,7 +136,10 @@ const Index = () => {
         <section className="flex flex-col">
           <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
             <p className="text-[#535353] font-light"> Adresszusatz:</p>
-            <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+            <SingleOne
+              heading="Bisheriger Adresszusatz"
+              text="Geben Sie hier Ihre bisherigen Adresszusatz an. Ein Adresszusatz wäre Bspw.: 'c/o oder z.Hd.'. Max. 25 Zeichen."
+            />
           </div>
           <input
             type="text"
@@ -143,7 +155,10 @@ const Index = () => {
           <section className="flex flex-col w-[100%] md:w-[45%]">
             <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
               <p className="text-[#535353] font-light"> Postleitzahl:</p>
-              <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+              <SingleOne
+                heading="Bisherige Postleitzahl"
+                text="Geben Sie hier Ihre bisherige Postleitzahl ein. Bspw.: 10119"
+              />
             </div>
             <input
               type="text"
@@ -158,7 +173,10 @@ const Index = () => {
           <section className="flex flex-col w-[100%] md:w-[45%]">
             <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
               <p className="text-[#535353] font-light"> Stadt:</p>
-              <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+              <SingleOne
+                heading="Bisheriger Ort"
+                text="Geben Sie hier Ihren bisherigen Ort ein. Bspw.: Berlin. Max. 30 Zeichen."
+              />
             </div>
             <input
               type="text"
@@ -181,7 +199,10 @@ const Index = () => {
         <div className="form my-4 md:My-8">
           <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
             <p className="text-[#535353] font-light"> Adresstyp:</p>
-            <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+            <SingleOne
+              heading="Art der Adresse"
+              text="Geben Sie hier an, ob Ihre Sendungen zukünftig an eine herkömmliche Adresse (Wohnung, Haus, Briefkasten) oder an ein Postfach in einer Postfiliale zugestellt werden sollen."
+            />
           </div>
           <select
             name="address_type"
@@ -198,7 +219,12 @@ const Index = () => {
         <section className="flex flex-col">
           <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
             <p className="text-[#535353] font-light"> Neuer Empfänger:</p>
-            <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+            <SingleOne
+              heading="Land der neuen Anschrift"
+              text="Wählen Sie hier das Land der neuen Anschrift aus. Bei Insolvenz- und Betreuungsfällen ist eine Nachsendung ins Ausland nicht möglich.
+
+"
+            />
           </div>
           <input
             type="text"
@@ -216,7 +242,12 @@ const Index = () => {
               Wählen Sie hier das Land der neuen Anschrift aus:
               <a class="field__helper">?</a>
             </p>
-            <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+            <SingleOne
+              heading="Neuer Straßenname"
+              text="Geben Sie Ihre neue Straße an. Bspw.: Bahnhofstraße. Max. 40 Zeichen.
+
+"
+            />
           </div>
           <select
             name="new_address_country"
@@ -472,7 +503,12 @@ const Index = () => {
           <section className="flex flex-col w-[100%] md:w-[45%]">
             <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
               <p className="text-[#535353] font-light">Straße: </p>
-              <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+              <SingleOne
+                heading="Neuer Straßenname"
+                text="Geben Sie Ihre neue Straße an. Bspw.: Bahnhofstraße. Max. 40 Zeichen.
+
+"
+              />
             </div>
             <input
               type="text"
@@ -487,7 +523,10 @@ const Index = () => {
           <section className="flex flex-col w-[100%] md:w-[45%]">
             <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
               <p className="text-[#535353] font-light"> Hausnummer: </p>
-              <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+              <SingleOne
+                heading="Neue Hausnummer"
+                text="Geben Sie Ihre hier Ihre neue Hausnummer an."
+              />
             </div>
             <input
               type="text"
@@ -503,7 +542,10 @@ const Index = () => {
         <section className="flex flex-col">
           <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
             <p className="text-[#535353] font-light"> Adresszusatz: </p>
-            <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+            <SingleOne
+              heading="Neuer Adresszusatz"
+              text="Geben Sie hier Ihren neuen Adresszusatz an. Ein Adresszusatz wäre Bspw.: 'c/o oder z.Hd.'. Max. 25 Zeichen."
+            />
           </div>
           <input
             type="text"
@@ -519,7 +561,12 @@ const Index = () => {
           <section className="flex flex-col w-[100%] md:w-[45%]">
             <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
               <p className="text-[#535353] font-light"> Postleitzahl: </p>
-              <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+              <SingleOne
+                heading="Neue Postleitzahl"
+                text="Geben Sie hier Ihre neue Postleitzahl ein. Bspw.: 10119
+
+"
+              />
             </div>
             <input
               type="text"
@@ -534,7 +581,12 @@ const Index = () => {
           <section className="flex flex-col w-[100%] md:w-[45%]">
             <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
               <p className="text-[#535353] font-light"> Ort: </p>
-              <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+              <SingleOne
+                heading="Neuer Ort"
+                text="Geben Sie hier Ihren neuen Ort ein. Bspw.: Berlin. Max. 30 Zeichen.
+
+"
+              />
             </div>
             <input
               type="text"

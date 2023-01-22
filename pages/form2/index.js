@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 
 import FormHeader from "../../components/UI/FormHeader";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
-
+import SingleOne from "../../components/Modal/SingleOne";
 import Link from "next/link";
 import Cookies from "js-cookie";
 const Index = () => {
@@ -85,7 +85,10 @@ const Index = () => {
         <div className="form">
           <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
             <p className="text-[#535353] font-light">Anrede:</p>
-            <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+            <SingleOne
+              heading="Anrede"
+              text="Geben Sie hier die korrekte Anrede an."
+            />
           </div>
           <select
             name="forward_reason_business"
@@ -102,7 +105,10 @@ const Index = () => {
           <section className="flex flex-col w-[100%] md:w-[45%]">
             <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
               <p className="text-[#535353] font-light"> Vorname:</p>
-              <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+              <SingleOne
+                heading="Vorname"
+                text="Geben Sie Ihren Vornamen an. Max. 30 Zeichen."
+              />
             </div>
             <input
               type="text"
@@ -117,7 +123,10 @@ const Index = () => {
           <section className="flex flex-col w-[100%] md:w-[45%]">
             <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
               <p className="text-[#535353] font-light"> Nachname:</p>
-              <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+              <SingleOne
+                heading="Nachname"
+                text="Geben Sie Ihren Nachnamen an. Max. 30 Zeichen."
+              />
             </div>
             <input
               type="text"
@@ -134,7 +143,6 @@ const Index = () => {
           <section className="flex flex-col w-[100%] md:w-[45%]">
             <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
               <p className="text-[#535353] font-light"> Straße:</p>
-              <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
             </div>
             <input
               type="text"
@@ -149,7 +157,6 @@ const Index = () => {
           <section className="flex flex-col w-[100%] md:w-[45%]">
             <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
               <p className="text-[#535353] font-light"> Neue Hausnummer:</p>
-              <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
             </div>
             <input
               type="text"
@@ -352,7 +359,12 @@ const Index = () => {
         <section className="flex flex-col  my-4 md:my-6">
           <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
             <p className="text-[#535353] font-light"> Telefonnummer: </p>
-            <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+            <SingleOne
+              heading="Telefonnummer"
+              text="Geben Sie hier Ihre Telefonnummer inklusive Vorwahl an, unter der Sie erreichbar sind. Die Telefonnummer muss mit 0 beginnen. Sonderzeichen sind nicht erlaubt. Max. 15 Zeichen.
+
+"
+            />
           </div>
           <input
             type="number"
@@ -367,7 +379,12 @@ const Index = () => {
         <section className="flex flex-col  my-4 md:my-6">
           <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
             <p className="text-[#535353] font-light"> E-Mail Adresse: </p>
-            <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+            <SingleOne
+              heading="E-Mail Adresse"
+              text="Geben Sie hier Ihre E-Mail Adresse an, unter der Sie erreichbar sind. Max. 50 Zeichen.
+
+"
+            />
           </div>
           <input
             type="email"
@@ -384,7 +401,12 @@ const Index = () => {
             <p className="text-[#535353] font-light">
               Bestätigung der E-Mail Adresse:
             </p>
-            <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+            <SingleOne
+              heading="E-Mail Adresse"
+              text="Geben Sie hier Ihre E-Mail Adresse an, unter der Sie erreichbar sind. Max. 50 Zeichen.
+
+"
+            />
           </div>
           <input
             type="email"
@@ -406,7 +428,10 @@ const Index = () => {
           <p className="text-[#535353] font-light">
             Haben Sie weitere Empfänger?
           </p>
-          <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+          <SingleOne heading="Weitere Empfänger?" text="Falls es weitere Empfänger gibt, geben Sie diese hier an.
+
+" />
+        
         </div>
         <div className="flex my-2 md:my-3 " onChange={() => setR1("Ja")}>
           <input
@@ -454,7 +479,7 @@ const Index = () => {
               <p className="text-[#535353] font-light">
                 <span>Päckchen, Pakete</span> <a class="field__helper">?</a>
               </p>
-              <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+              <SingleOne heading="Optionale Zusatzleistung: Päckchen/Pakete" text="Markieren Sie das Feld 'Päckchen/Pakete', wenn diese an Ihre neue Adresse weitergeleitet werden sollen. Es enstehen Ihnen hier Zusatzkosten von 6,99€ pro zugestelltem Paket." />
             </div>
           </label>
         </div>
@@ -471,7 +496,7 @@ const Index = () => {
               <p className="text-[#535353] font-light">
                 <span>Infopost</span> <a class="field__helper">?</a>
               </p>
-              <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+              <SingleOne heading="Optionale Zusatzleistung: Infopost" text="Markieren Sie das Feld 'Infopost', wenn diese an Ihre neue Adresse weitergeleitet werden soll." />
             </div>
           </label>
         </div>
@@ -489,7 +514,7 @@ const Index = () => {
                 <span>Zusätzliche Dienstleister wählen</span>{" "}
                 <a class="field__helper">?</a>
               </p>
-              <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+              <SingleOne heading="Optionale Zusatzleistung: Zusätzliche Dienstleister" text="Markieren Sie in dem Feld 'Zusätzliche Dienstleister', wenn Sie diese in Anspruch nehmen möchten." />
             </div>
           </label>
         </div>

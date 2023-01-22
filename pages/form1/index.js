@@ -5,6 +5,7 @@ import FormHeader from "../../components/UI/FormHeader";
 import { useRouter } from "next/router";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 import Link from "next/link";
+import SingleOne from "../../components/Modal/SingleOne";
 import Cookies from "js-cookie";
 const Index = () => {
   const [V1, setV1] = useState("Privat");
@@ -46,7 +47,8 @@ const Index = () => {
           <p className="text-[#535353] font-light">
             Bitte treffen Sie eine Auswahl
           </p>{" "}
-          <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+          {/* <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" onClick={()=>}/> */}
+          <SingleOne heading={'Privat oder Geschäftlich'} text={'Geben Sie hier an, ob es sich um einen privaten oder geschäftlichen Antrag handelt.'}/>
         </div>
         <div className="flex my-2 md:my-3 " onChange={() => setV1("Privat")}>
           <input
@@ -77,7 +79,7 @@ const Index = () => {
         </div>
         <div className="flex items-between justify-between text-[#535353] font-light my-4 md:my-6">
           <p className="text-[#535353] font-light">Grund der Beantragung:</p>{" "}
-          <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+          <SingleOne heading={'Privat oder Geschäftlich'} text={'Wählen Sie hier den Grund der Beantragung des Nachsendeauftrags.'}/>
         </div>
 
         <div className="form">
@@ -101,7 +103,7 @@ const Index = () => {
           <p className="text-[#535353] font-light">
             Start des Nachsendeauftrags
           </p>
-          <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+          <SingleOne heading={'Start des Nachsendeauftrags'} text={'Je nach Auftragsgrund wird ein Startdatum und/oder ein Enddatum benötigt. Der nächstmögliche Starttermin ist jeweils 5 Werktage nach Beauftragung.'}/>
         </div>
         <div
           className="flex my-2 md:my-3 "
