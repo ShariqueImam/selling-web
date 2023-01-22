@@ -3,7 +3,7 @@ import ProgressBar from "../../components/ProgressBar/ProgreeBar";
 import { IoMdArrowDropright } from "react-icons/io";
 import FormHeader from "../../components/UI/FormHeader";
 import { useRouter } from "next/router";
-
+import { AiOutlineQuestionCircle } from "react-icons/ai";
 import Link from "next/link";
 import Cookies from "js-cookie";
 const Index = () => {
@@ -37,14 +37,17 @@ const Index = () => {
         </p>
       </div>
       {/* ADDING THE MAIN FORM */}
-      <div className="w-[90%] md:w-[80%] lg:w-[80%] mx-auto">
+      <div className="w-[90%] md:w-[60%] lg:w-[60%] mx-auto">
         <FormHeader text="Auftragsart" />
       </div>
       {/* adding the form data */}
-      <div className="w-[90%] md:w-[75%] lg:w-[60%] mx-auto my-4 md:my-4">
-        <p className="text-[#535353] font-light">
-          Bitte treffen Sie eine Auswahl
-        </p>
+      <div className="w-[90%] md:w-[53%] lg:w-[40%] mx-auto my-4 md:my-4">
+        <div className="flex items-between justify-between">
+          <p className="text-[#535353] font-light">
+            Bitte treffen Sie eine Auswahl
+          </p>{" "}
+          <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+        </div>
         <div className="flex my-2 md:my-3 " onChange={() => setV1("Privat")}>
           <input
             type="radio"
@@ -72,9 +75,11 @@ const Index = () => {
             Geschäftlich
           </label>
         </div>
-        <p className="text-[#535353] font-light my-4 md:my-6">
-          Grund der Beantragung:
-        </p>
+        <div className="flex items-between justify-between text-[#535353] font-light my-4 md:my-6">
+          <p className="text-[#535353] font-light">Grund der Beantragung:</p>{" "}
+          <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+        </div>
+
         <div className="form">
           <select
             name="forward_reason_business"
@@ -88,13 +93,16 @@ const Index = () => {
           </select>
         </div>
       </div>
-      <div className="w-[90%] md:w-[80%] lg:w-[80%] mx-auto my-5 md:my-8">
+      <div className="w-[90%] md:w-[60%] lg:w-[60%] mx-auto my-5 md:my-8">
         <FormHeader text="Start des Nachsendeauftrags" />
       </div>
-      <div className="w-[90%] md:w-[75%] lg:w-[60%] mx-auto my-4 md:my-4">
-        <p className="text-[#535353] font-light">
-          Start des Nachsendeauftrags{" "}
-        </p>
+      <div className="w-[90%] md:w-[53%] lg:w-[40%] mx-auto my-4 md:my-4">
+        <div className="flex items-between justify-between text-[#535353] font-light">
+          <p className="text-[#535353] font-light">
+            Start des Nachsendeauftrags
+          </p>
+          <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+        </div>
         <div
           className="flex my-2 md:my-3 "
           onChange={() =>
@@ -141,7 +149,7 @@ const Index = () => {
 
       {/* ADDED THE FORWARD AND BACK BUTTONS */}
       {Allowed && (
-        <div className="bg-[#ffbdbd] px-5 md:px-12 py-2 md:py-5  w-[90%] md:w-[75%] lg:w-[60%] mx-auto rounded my-5 md:my-12">
+        <div className="bg-[#ffbdbd] px-5 md:px-12 py-2 md:py-5  w-[90%] md:w-[53%] lg:w-[40%] mx-auto rounded my-5 md:my-12">
           <p className="text-[#80504f]">
             Sie haben einen Formfehler. Bitte prüfen Sie die Felder. Haben Sie
             alle relevanten Felder ausgefüllt?
@@ -150,7 +158,7 @@ const Index = () => {
       )}
 
       <div
-        className="flex flex-col md:flex-row items-center justify-end w-[90%] md:w-[75%] lg:w-[60%] mx-auto"
+        className="flex flex-col md:flex-row items-center justify-end w-[90%] md:w-[53%] lg:w-[40%] mx-auto"
         onClick={handleLink}
       >
         <button className="my-2 w-[80%] md:w-[12%] lg:w-[13%] xl:w-[15%] plan px-5 md:px-5 py-2 md:py-2 rounded flex items-center justify-center text-white">

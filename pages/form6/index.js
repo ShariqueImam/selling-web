@@ -1,4 +1,5 @@
-import React from "react";
+import React from "react";import { AiOutlineQuestionCircle } from "react-icons/ai";
+
 import ProgressBar from "../../components/ProgressBar/ProgreeBar";
 import { IoMdArrowDropright } from "react-icons/io";
 
@@ -6,7 +7,7 @@ const index = () => {
   return (
     <div className="">
       {/* ADDED THE HEADER FOR THE PROGRESS BARS  */}
-      <div className="my-4 md:my-8 w-[90%] md:w-[75%] lg:w-[60%] mx-auto">
+      <div className="my-4 md:my-8 w-[90%] md:w-[53%] lg:w-[40%] mx-auto">
         <ProgressBar progress={100} />
         <p className=" my-3 md:my-3 text-center text-[#535353] font-normal text-xs">
           Schritt 6 von 6 -{" "}
@@ -14,7 +15,7 @@ const index = () => {
         </p>
       </div>
       {/* ADDED THE FORWARD AND BACK BUTTONS */}
-      <div className="flex flex-col md:flex-row items-center justify-between w-[90%] md:w-[75%] lg:w-[60%] mx-auto">
+      <div className="flex flex-col md:flex-row items-center justify-between w-[90%] md:w-[53%] lg:w-[40%] mx-auto">
         <button className="my-2 w-[80%] md:w-[12%] lg:w-[13%] xl:w-[15%] border-[1px] border-gray-300 px-5 md:px-5 py-4 md:py-2 rounded flex items-center justify-center text-gray-600">
           <p>ZURUCK</p>
         </button>

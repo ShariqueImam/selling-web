@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import ProgressBar from "../../components/ProgressBar/ProgreeBar";
 import { useRouter } from "next/router";
 import { loadStripe } from "@stripe/stripe-js";
-import axios from "axios";
+import axios from "axios";import { AiOutlineQuestionCircle } from "react-icons/ai";
+
 import { IoMdArrowDropright } from "react-icons/io";
 import FormHeader from "../../components/UI/FormHeader";
 import Image from "next/image";
@@ -52,17 +53,17 @@ const Index = () => {
   return (
     <div className="">
       {/* ADDED THE HEADER FOR THE PROGRESS BARS  */}
-      <div className="my-4 md:my-8 w-[90%] md:w-[75%] lg:w-[60%] mx-auto">
+      <div className="my-4 md:my-8 w-[90%] md:w-[53%] lg:w-[40%] mx-auto">
         <ProgressBar progress={82} />
         <p className=" my-3 md:my-3 text-center text-[#535353] font-normal text-xs">
           Schritt 5 von 6 - <span className="font-semibold"> Bezahlung</span>{" "}
         </p>
       </div>{" "}
-      <div className="w-[90%] md:w-[80%] lg:w-[80%] mx-auto">
+      <div className="w-[90%] md:w-[60%] lg:w-[60%] mx-auto">
         <FormHeader text="Wählen Sie Ihre gewünschte Laufzeit" />
       </div>
       {/* adding the price tab */}
-      <div className="w-[90%] md:w-[75%] lg:w-[60%] mx-auto my-4 md:my-4 flex text-[#535353] font-normal flex-col md:flex-row">
+      <div className="w-[90%] md:w-[53%] lg:w-[40%] mx-auto my-4 md:my-4 flex text-[#535353] font-normal flex-col md:flex-row">
         <div
           className={` cursor-pointer px-8 md:px-12 py-6 md:py-12 w-[100%] flex flex-col my-2 md:my-3 ${
             Price == "6" ? "bg-white shadow-price" : "bg-[#fafafa] border-[1px]"
@@ -96,10 +97,10 @@ const Index = () => {
           </div>
         </div>
       </div>{" "}
-      <div className="w-[90%] md:w-[80%] lg:w-[80%] mx-auto">
+      <div className="w-[90%] md:w-[60%] lg:w-[60%] mx-auto">
         <FormHeader text="Wählen Sie Ihre Zahlungsmethode" />
       </div>
-      <div className="w-[90%] md:w-[75%] lg:w-[60%] mx-auto my-4 md:my-4 flex text-[#535353] font-normal flex-col items-center justify-center">
+      <div className="w-[90%] md:w-[53%] lg:w-[40%] mx-auto my-4 md:my-4 flex text-[#535353] font-normal flex-col items-center justify-center">
         {/* adding the tab */}
         <div className="flex flex-wrap md:flex-nowrap">
           <div
@@ -165,10 +166,10 @@ const Index = () => {
           Make Payment
         </button>
       </div>
-      <div className="w-[90%] md:w-[80%] lg:w-[80%] mx-auto">
+      <div className="w-[90%] md:w-[60%] lg:w-[60%] mx-auto">
         <FormHeader text="Übersicht Ihrer Bestellung" />
       </div>
-      <div className="w-[90%] md:w-[75%] lg:w-[60%] mx-auto my-4 md:my-4 flex text-[#535353] font-normal flex flex-col  ">
+      <div className="w-[90%] md:w-[53%] lg:w-[40%] mx-auto my-4 md:my-4 flex text-[#535353] font-normal flex flex-col  ">
         <p>
           Sie beauftragen uns mit der Beantragung von Nachsendeaufträgen in
           Ihrem Namen bei der Deutsche Post AG und ggf. den weiteren genannten
@@ -261,7 +262,7 @@ const Index = () => {
         </button>
       </div>
       {/* ADDED THE FORWARD AND BACK BUTTONS */}
-      <div className="flex flex-col md:flex-row items-start justify-between w-[90%] md:w-[75%] lg:w-[60%] mx-auto">
+      <div className="flex flex-col md:flex-row items-start justify-between w-[90%] md:w-[53%] lg:w-[40%] mx-auto">
         {/* <button className="my-2 w-[80%] md:w-[12%] lg:w-[13%] xl:w-[15%] border-[1px] border-gray-300 px-5 md:px-5 py-4 md:py-2 rounded flex items-center justify-center text-gray-600">
           <p>ZURUCK</p>
         </button>

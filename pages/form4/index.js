@@ -2,7 +2,8 @@ import React from "react";
 import ProgressBar from "../../components/ProgressBar/ProgreeBar";
 import { IoMdArrowDropright } from "react-icons/io";
 import FormHeader from "../../components/UI/FormHeader";
-import Router, { useRouter } from "next/router";
+import Router, { useRouter } from "next/router";import { AiOutlineQuestionCircle } from "react-icons/ai";
+
 import axios from "axios";
 import Cookies from "js-cookie";
 import Link from "next/link";
@@ -57,7 +58,7 @@ const Index = () => {
   return (
     <div className="">
       {/* ADDED THE HEADER FOR THE PROGRESS BARS  */}
-      <div className="my-4 md:my-8 w-[90%] md:w-[75%] lg:w-[60%] mx-auto">
+      <div className="my-4 md:my-8 w-[90%] md:w-[53%] lg:w-[40%] mx-auto">
         <ProgressBar progress={66} />
         <p className=" my-3 md:my-3 text-center text-[#535353] font-normal text-xs">
           Schritt 4 von 6 -{" "}
@@ -65,10 +66,10 @@ const Index = () => {
         </p>
       </div>
       {/* adding the header */}
-      <div className="w-[90%] md:w-[80%] lg:w-[80%] mx-auto">
+      <div className="w-[90%] md:w-[60%] lg:w-[60%] mx-auto">
         <FormHeader text="Übersicht Ihrer Bestellung" />
       </div>
-      <div className="w-[90%] md:w-[75%] lg:w-[60%] mx-auto my-4 md:my-4 flex flex-col md:flex-row items-center justify-center">
+      <div className="w-[90%] md:w-[60%] lg:w-[60%] mx-auto my-4 md:my-4 flex flex-col md:flex-row items-center justify-center">
         <div className="bg-[#fafafa] mx-4 md:mx-5 px-12 md:px-16 py-12 md:py-16 w-[100%] text-[#535353] my-3 md:my-4">
           <h2 className="my-2 md:my-3">Bisherige Anschrift:</h2>
           <div className="my-2 md:my-3">
@@ -94,10 +95,10 @@ const Index = () => {
           </div>
         </div>
       </div>
-      <div className="w-[90%] md:w-[80%] lg:w-[80%] mx-auto">
+      <div className="w-[90%] md:w-[60%] lg:w-[60%] mx-auto">
         <FormHeader text="Empfänger" />
       </div>
-      <div className="w-[90%] md:w-[75%] lg:w-[60%] mx-auto my-4 md:my-4 flex flex-col text-[#535353]">
+      <div className="w-[90%] md:w-[53%] lg:w-[40%] mx-auto my-4 md:my-4 flex flex-col text-[#535353]">
         <h2 className="text-[#535353] font-semibold">
           Bevollmächtigte(r){" "}
           <Link href="/form2">
@@ -112,10 +113,10 @@ const Index = () => {
         <div className="my-1 md:my-2">{Cookies.get("2phonenumber")}</div>
         <div className="my-1 md:my-2">{Cookies.get("2email")}</div>
       </div>
-      <div className="w-[90%] md:w-[80%] lg:w-[80%] mx-auto">
+      <div className="w-[90%] md:w-[60%] lg:w-[60%] mx-auto">
         <FormHeader text="Übersicht der Daten" />
       </div>
-      <div className="w-[90%] md:w-[75%] lg:w-[60%] mx-auto my-4 md:my-4 flex flex-col text-[#535353]">
+      <div className="w-[90%] md:w-[53%] lg:w-[40%] mx-auto my-4 md:my-4 flex flex-col text-[#535353]">
         <div className="my-4 md:my-5 ">
           <p className="text-[#535353] font-semibold">Antragsart</p>{" "}
           <p>{Cookies.get("choice")}</p>
@@ -131,10 +132,10 @@ const Index = () => {
           <p>{Cookies.get("reason")}</p>
         </div>
       </div>
-      <div className="w-[90%] md:w-[80%] lg:w-[80%] mx-auto">
+      <div className="w-[90%] md:w-[60%] lg:w-[60%] mx-auto">
         <FormHeader text="Zusätzliche Angaben" />
       </div>{" "}
-      <div className="w-[90%] md:w-[75%] lg:w-[60%] mx-auto my-4 md:my-4 flex flex-col text-[#535353] ">
+      <div className="w-[90%] md:w-[53%] lg:w-[40%] mx-auto my-4 md:my-4 flex flex-col text-[#535353] ">
         <div className="flex md:justify-between md:items-center flex-col md:flex-row w-[100%] md:w-[65%] ">
           <div className="my-4 md:my-5 ">
             <p className="text-[#535353] font-semibold">E-Mail Adresse</p>{" "}
@@ -157,7 +158,7 @@ const Index = () => {
         </div>
       </div>
       {/* ADDED THE FORWARD AND BACK BUTTONS */}
-      <div className="flex flex-col md:flex-row items-center justify-between w-[90%] md:w-[75%] lg:w-[60%] mx-auto">
+      <div className="flex flex-col md:flex-row items-center justify-between w-[90%] md:w-[53%] lg:w-[40%] mx-auto">
         <Link href="/form3" className="w-[80%] md:w-auto">
           <button className="my-2 w-[100%] border-[1px] border-gray-300 px-5 md:px-5 py-4 md:py-2 rounded flex items-center justify-center text-gray-600">
             <p>ZURUCK</p>

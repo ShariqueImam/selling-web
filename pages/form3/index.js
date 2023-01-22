@@ -4,6 +4,8 @@ import { IoMdArrowDropright } from "react-icons/io";
 import Link from "next/link";
 import FormHeader from "../../components/UI/FormHeader";
 import Cookies from "js-cookie";
+import { AiOutlineQuestionCircle } from "react-icons/ai";
+
 import { useRouter } from "next/router";
 
 const Index = () => {
@@ -58,22 +60,25 @@ const Index = () => {
   return (
     <div className="">
       {/* ADDED THE HEADER FOR THE PROGRESS BARS  */}
-      <div className="my-4 md:my-8 w-[90%] md:w-[75%] lg:w-[60%] mx-auto">
+      <div className="my-4 md:my-8 w-[90%] md:w-[53%] lg:w-[40%] mx-auto">
         <ProgressBar progress={50} />
         <p className=" my-3 md:my-3 text-center text-[#535353] font-normal text-xs">
           Schritt 3 von 6 - <span className="font-semibold"> Anschriften</span>{" "}
         </p>
       </div>
       {/* adding the header for the form */}
-      <div className="w-[90%] md:w-[80%] lg:w-[80%] mx-auto">
+      <div className="w-[90%] md:w-[60%] lg:w-[60%] mx-auto">
         <FormHeader text="Bisherige Anschrift" />
       </div>
       {/* adding the form data */}
-      <div className="w-[90%] md:w-[75%] lg:w-[60%] mx-auto my-4 md:my-4">
+      <div className="w-[90%] md:w-[53%] lg:w-[40%] mx-auto my-4 md:my-4">
         <div className="form">
-          <p className="text-[#535353] font-light">
-            Art der bisherigen Anschrift:
-          </p>
+          <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
+            <p className="text-[#535353] font-light">
+              Art der bisherigen Anschrift:
+            </p>
+            <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+          </div>
           <select
             name="address_type"
             required="required"
@@ -89,12 +94,10 @@ const Index = () => {
         </div>
         <div className="flex justify-between flex-col md:flex-row my-3 md:my-6">
           <section className="flex flex-col w-[100%] md:w-[45%]">
-            <label
-              htmlFor="1"
-              className="text-[#535353] font-light my-2 md:my-3"
-            >
-              Straße:{" "}
-            </label>
+            <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
+              <p className="text-[#535353] font-light">Straße: </p>
+              <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+            </div>
             <input
               type="text"
               className="in"
@@ -106,12 +109,10 @@ const Index = () => {
             />
           </section>
           <section className="flex flex-col w-[100%] md:w-[45%]">
-            <label
-              htmlFor="1"
-              className="text-[#535353] font-light my-2 md:my-3"
-            >
-              Hausnummer:{" "}
-            </label>
+            <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
+              <p className="text-[#535353] font-light"> Hausnummer: </p>
+              <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+            </div>
             <input
               type="text"
               className="in"
@@ -124,9 +125,10 @@ const Index = () => {
           </section>
         </div>
         <section className="flex flex-col">
-          <label htmlFor="1" className="text-[#535353] font-light my-2 md:my-3">
-            Adresszusatz:
-          </label>
+          <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
+            <p className="text-[#535353] font-light"> Adresszusatz:</p>
+            <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+          </div>
           <input
             type="text"
             className="in"
@@ -139,12 +141,10 @@ const Index = () => {
         </section>
         <div className="flex justify-between flex-col md:flex-row my-3 md:my-6">
           <section className="flex flex-col w-[100%] md:w-[45%]">
-            <label
-              htmlFor="1"
-              className="text-[#535353] font-light my-2 md:my-3"
-            >
-              Postleitzahl:
-            </label>
+            <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
+              <p className="text-[#535353] font-light"> Postleitzahl:</p>
+              <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+            </div>
             <input
               type="text"
               className="in"
@@ -156,12 +156,10 @@ const Index = () => {
             />
           </section>
           <section className="flex flex-col w-[100%] md:w-[45%]">
-            <label
-              htmlFor="1"
-              className="text-[#535353] font-light my-2 md:my-3"
-            >
-              Stadt:
-            </label>
+            <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
+              <p className="text-[#535353] font-light"> Stadt:</p>
+              <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+            </div>
             <input
               type="text"
               className="in"
@@ -175,13 +173,16 @@ const Index = () => {
         </div>
       </div>
       {/* adding the other header */}
-      <div className="w-[90%] md:w-[80%] lg:w-[80%] mx-auto">
+      <div className="w-[90%] md:w-[60%] lg:w-[60%] mx-auto">
         <FormHeader text="Neue Anschrift" />
       </div>
       {/* adding the next section */}
-      <div className="w-[90%] md:w-[75%] lg:w-[60%] mx-auto my-4 md:my-4">
+      <div className="w-[90%] md:w-[53%] lg:w-[40%] mx-auto my-4 md:my-4">
         <div className="form my-4 md:My-8">
-          <p className="text-[#535353] font-light">Adresstyp:</p>
+          <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
+            <p className="text-[#535353] font-light"> Adresstyp:</p>
+            <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+          </div>
           <select
             name="address_type"
             required="required"
@@ -195,9 +196,10 @@ const Index = () => {
           </select>
         </div>
         <section className="flex flex-col">
-          <label htmlFor="1" className="text-[#535353] font-light my-2 md:my-3">
-            Neuer Empfänger:
-          </label>
+          <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
+            <p className="text-[#535353] font-light"> Neuer Empfänger:</p>
+            <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+          </div>
           <input
             type="text"
             className="in"
@@ -209,10 +211,13 @@ const Index = () => {
           />
         </section>
         <div class="form my-5 md:my-6" mandatory="true">
-          <label class="text-[#535353] font-light my-3 md:my-4">
-            Wählen Sie hier das Land der neuen Anschrift aus:
-            <a class="field__helper">?</a>
-          </label>
+          <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
+            <p className="text-[#535353] font-light">
+              Wählen Sie hier das Land der neuen Anschrift aus:
+              <a class="field__helper">?</a>
+            </p>
+            <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+          </div>
           <select
             name="new_address_country"
             required="required"
@@ -465,12 +470,10 @@ const Index = () => {
         </div>
         <div className="flex justify-between flex-col md:flex-row my-3 md:my-6">
           <section className="flex flex-col w-[100%] md:w-[45%]">
-            <label
-              htmlFor="1"
-              className="text-[#535353] font-light my-2 md:my-3"
-            >
-              Straße:{" "}
-            </label>
+            <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
+              <p className="text-[#535353] font-light">Straße: </p>
+              <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+            </div>
             <input
               type="text"
               className="in"
@@ -482,12 +485,10 @@ const Index = () => {
             />
           </section>
           <section className="flex flex-col w-[100%] md:w-[45%]">
-            <label
-              htmlFor="1"
-              className="text-[#535353] font-light my-2 md:my-3"
-            >
-              Hausnummer:{" "}
-            </label>
+            <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
+              <p className="text-[#535353] font-light"> Hausnummer: </p>
+              <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+            </div>
             <input
               type="text"
               className="in"
@@ -500,9 +501,10 @@ const Index = () => {
           </section>
         </div>
         <section className="flex flex-col">
-          <label htmlFor="1" className="text-[#535353] font-light my-2 md:my-3">
-            Adresszusatz:
-          </label>
+          <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
+            <p className="text-[#535353] font-light"> Adresszusatz: </p>
+            <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+          </div>
           <input
             type="text"
             className="in"
@@ -515,12 +517,10 @@ const Index = () => {
         </section>
         <div className="flex justify-between flex-col md:flex-row my-3 md:my-6">
           <section className="flex flex-col w-[100%] md:w-[45%]">
-            <label
-              htmlFor="1"
-              className="text-[#535353] font-light my-2 md:my-3"
-            >
-              Postleitzahl:
-            </label>
+            <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
+              <p className="text-[#535353] font-light"> Postleitzahl: </p>
+              <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+            </div>
             <input
               type="text"
               className="in"
@@ -532,12 +532,10 @@ const Index = () => {
             />
           </section>
           <section className="flex flex-col w-[100%] md:w-[45%]">
-            <label
-              htmlFor="1"
-              className="text-[#535353] font-light my-2 md:my-3"
-            >
-              Ort:{" "}
-            </label>
+            <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
+              <p className="text-[#535353] font-light"> Ort: </p>
+              <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+            </div>
             <input
               type="text"
               className="in"
@@ -552,7 +550,7 @@ const Index = () => {
       </div>
       {/* adding the 2nd form data */}
       {Allowed && (
-        <div className="bg-[#ffbdbd] px-5 md:px-12 py-2 md:py-5  w-[90%] md:w-[75%] lg:w-[60%] mx-auto rounded my-5 md:my-12">
+        <div className="bg-[#ffbdbd] px-5 md:px-12 py-2 md:py-5  w-[90%] md:w-[53%] lg:w-[40%] mx-auto rounded my-5 md:my-12">
           <p className="text-[#80504f]">
             Sie haben einen Formfehler. Bitte prüfen Sie die Felder. Haben Sie
             alle relevanten Felder ausgefüllt?
@@ -560,7 +558,7 @@ const Index = () => {
         </div>
       )}
       {/* ADDED THE FORWARD AND BACK BUTTONS */}
-      <div className="flex flex-col md:flex-row items-center justify-between w-[90%] md:w-[75%] lg:w-[60%] mx-auto">
+      <div className="flex flex-col md:flex-row items-center justify-between w-[90%] md:w-[53%] lg:w-[40%] mx-auto">
         <Link href="/form2" className="w-[80%] md:w-auto">
           <button className="my-2 w-[100%] border-[1px] border-gray-300 px-5 md:px-5 py-4 md:py-2 rounded flex items-center justify-center text-gray-600">
             <p>ZURUCK</p>

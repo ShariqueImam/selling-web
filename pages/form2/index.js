@@ -4,10 +4,12 @@ import { IoMdArrowDropright } from "react-icons/io";
 import { useRouter } from "next/router";
 
 import FormHeader from "../../components/UI/FormHeader";
+import { AiOutlineQuestionCircle } from "react-icons/ai";
+
 import Link from "next/link";
 import Cookies from "js-cookie";
 const Index = () => {
-  const router = useRouter()
+  const router = useRouter();
   const [Allowed, setAllowed] = useState(null);
   const [V1, setV1] = useState("");
   const [N1, setN1] = useState("");
@@ -67,7 +69,7 @@ const Index = () => {
   return (
     <div className="">
       {/* ADDED THE HEADER FOR THE PROGRESS BARS  */}
-      <div className="my-4 md:my-8 w-[90%] md:w-[75%] lg:w-[60%] mx-auto">
+      <div className="my-4 md:my-8 w-[90%] md:w-[53%] lg:w-[40%] mx-auto">
         <ProgressBar progress={32} />
         <p className=" my-3 md:my-3 text-center text-[#535353] font-normal text-xs">
           Schritt 2 von 6 -{" "}
@@ -75,13 +77,16 @@ const Index = () => {
         </p>
       </div>
       {/* adding the form content */}
-      <div className="w-[90%] md:w-[80%] lg:w-[80%] mx-auto">
+      <div className="w-[90%] md:w-[60%] lg:w-[60%] mx-auto">
         <FormHeader text="Auftragsart" />
       </div>
       {/* adding the first select */}
-      <div className="w-[90%] md:w-[75%] lg:w-[60%] mx-auto my-4 md:my-4">
+      <div className="w-[90%] md:w-[53%] lg:w-[40%] mx-auto my-4 md:my-4">
         <div className="form">
-          <p className="text-[#535353] font-light">Anrede:</p>
+          <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
+            <p className="text-[#535353] font-light">Anrede:</p>
+            <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+          </div>
           <select
             name="forward_reason_business"
             required="required"
@@ -95,12 +100,10 @@ const Index = () => {
         {/* adding the name */}
         <div className="flex justify-between flex-col md:flex-row my-3 md:my-6">
           <section className="flex flex-col w-[100%] md:w-[45%]">
-            <label
-              htmlFor="1"
-              className="text-[#535353] font-light my-2 md:my-3"
-            >
-              Vorname:
-            </label>
+            <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
+              <p className="text-[#535353] font-light"> Vorname:</p>
+              <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+            </div>
             <input
               type="text"
               className="in"
@@ -112,12 +115,10 @@ const Index = () => {
             />
           </section>
           <section className="flex flex-col w-[100%] md:w-[45%]">
-            <label
-              htmlFor="1"
-              className="text-[#535353] font-light my-2 md:my-3"
-            >
-              Nachname:
-            </label>
+            <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
+              <p className="text-[#535353] font-light"> Nachname:</p>
+              <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+            </div>
             <input
               type="text"
               className="in"
@@ -131,12 +132,10 @@ const Index = () => {
         </div>
         <div className="flex justify-between flex-col md:flex-row my-3 md:my-6">
           <section className="flex flex-col w-[100%] md:w-[45%]">
-            <label
-              htmlFor="1"
-              className="text-[#535353] font-light my-2 md:my-3"
-            >
-              Straße:
-            </label>
+            <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
+              <p className="text-[#535353] font-light"> Straße:</p>
+              <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+            </div>
             <input
               type="text"
               className="in"
@@ -148,12 +147,10 @@ const Index = () => {
             />
           </section>
           <section className="flex flex-col w-[100%] md:w-[45%]">
-            <label
-              htmlFor="1"
-              className="text-[#535353] font-light my-2 md:my-3"
-            >
-              Neue Hausnummer:
-            </label>
+            <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
+              <p className="text-[#535353] font-light"> Neue Hausnummer:</p>
+              <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+            </div>
             <input
               type="text"
               className="in"
@@ -353,9 +350,10 @@ const Index = () => {
         </div>
         {/* adding other forms */}
         <section className="flex flex-col  my-4 md:my-6">
-          <label htmlFor="1" className="text-[#535353] font-light my-2 md:my-3">
-            Telefonnummer:{" "}
-          </label>
+          <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
+            <p className="text-[#535353] font-light"> Telefonnummer: </p>
+            <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+          </div>
           <input
             type="number"
             className="in"
@@ -367,9 +365,10 @@ const Index = () => {
           />
         </section>
         <section className="flex flex-col  my-4 md:my-6">
-          <label htmlFor="1" className="text-[#535353] font-light my-2 md:my-3">
-            E-Mail Adresse:{" "}
-          </label>
+          <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
+            <p className="text-[#535353] font-light"> E-Mail Adresse: </p>
+            <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+          </div>
           <input
             type="email"
             className="in"
@@ -381,9 +380,12 @@ const Index = () => {
           />
         </section>
         <section className="flex flex-col my-4 md:my-6">
-          <label htmlFor="1" className="text-[#535353] font-light my-2 md:my-3">
-            Bestätigung der E-Mail Adresse:{" "}
-          </label>
+          <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
+            <p className="text-[#535353] font-light">
+              Bestätigung der E-Mail Adresse:
+            </p>
+            <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+          </div>
           <input
             type="email"
             className="in"
@@ -395,14 +397,17 @@ const Index = () => {
           />
         </section>
       </div>
-      <div className="w-[90%] md:w-[80%] lg:w-[80%] mx-auto">
+      <div className="w-[90%] md:w-[60%] lg:w-[60%] mx-auto">
         <FormHeader text="Weitere Empfänger eintragen" />
       </div>
       {/* adding the 2nd part of the form */}
-      <div className="w-[90%] md:w-[75%] lg:w-[60%] mx-auto my-4 md:my-4">
-        <p className="text-[#535353] font-light">
-          Haben Sie weitere Empfänger?
-        </p>
+      <div className="w-[90%] md:w-[53%] lg:w-[40%] mx-auto my-4 md:my-4">
+        <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
+          <p className="text-[#535353] font-light">
+            Haben Sie weitere Empfänger?
+          </p>
+          <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+        </div>
         <div className="flex my-2 md:my-3 " onChange={() => setR1("Ja")}>
           <input
             type="radio"
@@ -429,13 +434,13 @@ const Index = () => {
           </label>
         </div>
       </div>
-      <div className="w-[90%] md:w-[80%] lg:w-[80%] mx-auto">
+      <div className="w-[90%] md:w-[60%] lg:w-[60%] mx-auto">
         <FormHeader text="Optionale Zusatzleistungen" />
       </div>
       {/* adding the tick buttons */}
-      <div className="w-[90%] md:w-[75%] lg:w-[60%] mx-auto my-4 md:my-4">
+      <div className="w-[90%] md:w-[53%] lg:w-[40%] mx-auto my-4 md:my-4">
         <div className="my-5 md:my-8  ">
-          <label className="flex">
+          <label className="flex items-center ">
             <input
               type="checkbox"
               name="optional_parcels"
@@ -445,11 +450,16 @@ const Index = () => {
                 setC1((prev) => !prev);
               }}
             />
-            <span>Päckchen, Pakete</span> <a class="field__helper">?</a>
+            <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
+              <p className="text-[#535353] font-light">
+                <span>Päckchen, Pakete</span> <a class="field__helper">?</a>
+              </p>
+              <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+            </div>
           </label>
         </div>
         <div class="my-5 md:my-8  ">
-          <label className="flex">
+          <label className="flex items-center">
             <input
               type="checkbox"
               name="optional_dhl_infopost"
@@ -457,11 +467,16 @@ const Index = () => {
               value={C2}
               onChange={() => setC2((prev) => !prev)}
             />{" "}
-            <span>Infopost</span> <a class="field__helper">?</a>
+            <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
+              <p className="text-[#535353] font-light">
+                <span>Infopost</span> <a class="field__helper">?</a>
+              </p>
+              <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+            </div>
           </label>
         </div>
         <div class="my-5 md:my-8  ">
-          <label className="flex">
+          <label className="flex items-center">
             <input
               type="checkbox"
               name="optional_additional_providers"
@@ -469,13 +484,18 @@ const Index = () => {
               value={C3}
               onChange={() => setC3((prev) => !prev)}
             />{" "}
-            <span>Zusätzliche Dienstleister wählen</span>{" "}
-            <a class="field__helper">?</a>
+            <div className="flex items-between justify-between text-[#535353] font-light my-3 md:my-3">
+              <p className="text-[#535353] font-light">
+                <span>Zusätzliche Dienstleister wählen</span>{" "}
+                <a class="field__helper">?</a>
+              </p>
+              <AiOutlineQuestionCircle className="text-lime-500 text-2xl cursor-pointer" />
+            </div>
           </label>
         </div>
       </div>
       {Allowed && (
-        <div className="bg-[#ffbdbd] px-5 md:px-12 py-2 md:py-5  w-[90%] md:w-[75%] lg:w-[60%] mx-auto rounded my-5 md:my-12">
+        <div className="bg-[#ffbdbd] px-5 md:px-12 py-2 md:py-5  w-[90%] md:w-[53%] lg:w-[40%] mx-auto rounded my-5 md:my-12">
           <p className="text-[#80504f]">
             Sie haben einen Formfehler. Bitte prüfen Sie die Felder. Haben Sie
             alle relevanten Felder ausgefüllt?
@@ -483,7 +503,7 @@ const Index = () => {
         </div>
       )}
       {/* ADDED THE FORWARD AND BACK BUTTONS */}
-      <div className="flex flex-col md:flex-row items-center justify-between w-[90%] md:w-[75%] lg:w-[60%] mx-auto">
+      <div className="flex flex-col md:flex-row items-center justify-between w-[90%] md:w-[53%] lg:w-[40%] mx-auto">
         <Link href="/form1" className="w-[80%] md:w-auto">
           <button className="my-2 w-[100%]  border-[1px] border-gray-300 px-5 md:px-5 py-4 md:py-2 rounded flex items-center justify-center text-gray-600">
             <p>ZURUCK</p>
