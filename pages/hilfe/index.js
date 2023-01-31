@@ -9,7 +9,7 @@ const Index = () => {
     setOption(e.target.value);
   };
   return (
-    <div className="text-[#535353] font-light w-[95%] md:w-[65%] mx-auto my-8 md:my-12 ">
+    <div className="text-[#535353] font-light w-[95%] md:w-[85%] lg:w-[65%] mx-auto my-8 md:my-12 ">
       <p className={style.heading}>Wie können wir Ihnen weiterhelfen?</p>
       <p className={style.para}>
         Kontaktieren Sie uns zu jeder Zeit der Woche. In der Regel beantwortet

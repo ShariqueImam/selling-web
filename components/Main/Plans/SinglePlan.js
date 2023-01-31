@@ -2,9 +2,9 @@ import React from "react";
 import Link from "next/link";
 const SinglePlan = ({ heading, p1, p2, p11, p12 }) => {
   return (
-    <div className="w-[100%] nav md:mx-5 plan-shadow my-5 md:my-1">
+    <div className="w-[100%] nav md:mx-5 plan-shadow my-5 md:my-1 rounded">
       <Link href="/form1">
-        <h2 className="bg-[#5d5d5d] text-white text-center py-4 md:py-6 tracking-wide text-2xl md:text-2xl font-extralight">
+        <h2 className="bg-[#5d5d5d] text-white text-center py-4 md:py-6 tracking-wide text-2xl md:text-2xl font-extralight rounded-t">
           {heading}:
         </h2>
         <div className="flex">

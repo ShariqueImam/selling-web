@@ -6,7 +6,7 @@ const style = {
 };
 const index = () => {
   return (
-    <div className="text-[#535353] font-light w-[95%] md:w-[65%] mx-auto my-8 md:my-12">
+    <div className="text-[#535353] font-light w-[95%] md:w-[85%] lg:w-[65%] mx-auto my-8 md:my-12">
       <h2 className="text-3xl md:text-2xl font-semibold">AGB
 </h2>
       <p className={style.para}>

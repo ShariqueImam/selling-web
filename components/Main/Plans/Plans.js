@@ -2,7 +2,7 @@ import React from "react";
 import SinglePlan from "./SinglePlan";
 const Plans = () => {
   return (
-    <div className="flex w-[100%] md:w-[70%] mx-auto my-9 md:my-12 items-center justify-center flex-col px-4 md:px-0  ">
+    <div className="flex w-[100%] md:w-[75%] lg:w-[70%] mx-auto my-9 md:my-12 items-center justify-center flex-col px-4 md:px-0 ">
       <div className="flex w-[100%] flex-col md:flex-row items-center justify-center">
         <SinglePlan
           heading={"Privat"}
@@ -19,7 +19,9 @@ const Plans = () => {
           p12={"10"}
         />
       </div>
-      <p className="text-[#535353] text-xs my-7 md:my-8">*All prices include the statutory sales tax of 19%.</p>
+      <p className="text-[#535353] text-xs my-7 md:my-8">
+        *All prices include the statutory sales tax of 19%.
+      </p>
     </div>
   );
 };

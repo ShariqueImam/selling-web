@@ -8,6 +8,9 @@
   }
 }
 
+.aa {
+  clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
+}
 .skewed-bg {
   background-image: linear-gradient(45deg, #ffb900 0, #ffdb00 100%);
   transform: skewY(-1deg);
@@ -22,6 +25,11 @@
   box-shadow: 0 3px 5px 0 rgb(0 0 0 / 15%);
   display: hidden;
 }
+.header {
+  box-shadow: 0 13px 15px 0 rgb(0 0 0 / 25%);
+  display: hidden;
+}
+
 .plan-shadow {
   box-shadow: 0 10px 12px 0 rgb(0 0 0 / 15%);
   display: hidden;
@@ -149,13 +157,13 @@
 }
 .c4 {
   width: 0.6rem;
-  height:2rem;
+  height: 2rem;
   background-image: url(/checkbox.png);
   background-size: cover;
 }
 .c3 {
   width: 0.6rem;
-  height:2rem;
+  height: 2rem;
   background-image: url(/checkbox-checked.png);
   background-size: cover;
 }

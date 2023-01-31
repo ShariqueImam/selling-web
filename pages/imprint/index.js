@@ -2,7 +2,7 @@ import React from "react";
 
 const index = () => {
   return (
-    <div className="text-[#535353] font-light w-[95%] md:w-[65%] mx-auto my-8 md:my-12 ">
+    <div className="text-[#535353] font-light w-[95%] md:w-[85%] lg:w-[65%] mx-auto my-8 md:my-12 ">
       <p className=" py-3 md:py-2">Scalable Services GmbH</p>
       <p className=" py-3 md:py-2">Carl-Reuther-Str. 1</p>
       <p className=" py-3 md:py-2">68305 Mannheim</p>

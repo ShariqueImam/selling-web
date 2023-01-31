@@ -6,12 +6,12 @@ import Link from "next/link";
 import { IoMdArrowDropright } from "react-icons/io";
 const style = {
   wrapper:
-    "hidden sm:flex flex-col  w-[95%] md:w-[75%] mx-auto bg-white w-[90%] md:w-[45%] pt-8 md:pt-12 ",
+    "hidden sm:flex flex-col  w-[95%] md:w-[55%] lg:w-[45%] mx-auto bg-white ",
 };
 const HomeCard = () => {
   return (
     <div className={style.wrapper}>
-      <div className="nav flex flex-col">
+      <div className="header flex flex-col pt-6">
         <div className="flex items-center justify-start py-2 md:py-2 px-6 md:px-8 ">
           <TiTick className="text-green-500 text-2xl md:text-5xl mx-2 hidden sm:flex" />
           <p className="text-secondary">
@@ -22,7 +22,7 @@ const HomeCard = () => {
             eine Vielzahl von Zustellern & Lieferdiensten gleichzeitig ab
           </p>
         </div>
-        <div className="flex items-center justify-start py-2 md:py-2 px-6 md:px-8">
+        <div className="flex items-center justify-start py-1 md:py-1 px-6 md:px-8">
           <TiTick className="text-green-500 text-2xl md:text-5xl mx-2 hidden sm:flex" />
           <p className="text-secondary">
             Stellen Sie Ihren Antrag in nur wenigen Minuten mit unserem
@@ -38,17 +38,17 @@ const HomeCard = () => {
         </div>
         {/* adding the image */}
         <div className="flex items-center justify-center my-3">
-          <Image src="/assets/6.png" width={100} height={100} />
-          <Image src="/assets/7.png" width={100} height={100} />
-          <Image src="/assets/4.png" width={100} height={100} />
+          <Image src="/assets/6.png" width={80} height={80} />
+          <Image src="/assets/7.png" width={80} height={80} />
+          <Image src="/assets/4.png" width={80} height={80} />
         </div>
         <div className="flex items-center justify-center my-3">
-          <Image src="/assets/5.png" width={100} height={100} />
-          <Image src="/assets/2.png" width={100} height={100} />
-          <Image src="/assets/3.png" width={100} height={100} />
-          <Image src="/assets/1.png" width={100} height={100} />
+          <Image src="/assets/5.png" width={80} height={80} />
+          <Image src="/assets/2.png" width={80} height={80} />
+          <Image src="/assets/3.png" width={80} height={80} />
+          <Image src="/assets/1.png" width={80} height={80} />
         </div>
-        <button className="green flex  items-center justify-center hover:scale-[1.12] transtion duration-[100ms] mt-7 md:mt-9 py-3">
+        <button className="green flex  items-center justify-center hover:scale-[1.12] transtion duration-[80ms] mt-7 md:mt-9 py-3">
           <Link href="/form1" className="flex items-center justify-center">
             <p className="text-white text-3xl md:text-4xl font-semibold tracking-widest">
               BEANTRAGEN
